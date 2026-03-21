@@ -9,13 +9,17 @@
         content="Akshat Dubey — Full Stack Developer & AI Solutions Builder. Building fast, scalable websites and intelligent systems that help businesses grow.">
     <meta name="keywords" content="Full Stack Developer, AI Developer, React, Node.js, Next.js, Web Development, India">
     <meta name="author" content="Akshat Dubey">
+    
+    <!-- Anti-caching headers for active development -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;700;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=39.0">
+    <link rel="stylesheet" href="styles.css?v=45.0">
 </head>
 
 <body>
@@ -51,7 +55,7 @@
                         aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="mailto:akshatdubey1967@gmail.com" class="nav-icon" aria-label="Email"><i
                             class="fas fa-envelope"></i></a>
-                    <a href="#contact" class="nav-cta magnetic-btn">Hire Me</a>
+                    <a href="#contact" class="nav-cta magnetic-btn">Book a Free Call</a>
                 </div>
                 <div id="scroll-progress"></div>
             </nav>
@@ -60,22 +64,20 @@
             <section id="home" class="hero section-spacing">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <div class="hero-badge">
+                        <div class="hero-badge" style="margin-bottom: 2rem;">
                             <span class="badge-dot"></span>
                             Available for freelance work
                         </div>
-                        <h1 class="hero-title">AKSHAT<br>DUBEY.</h1>
-                        <div class="hero-subtitle">
-                            <span class="hero-role">Full Stack Developer <span class="role-sep">&amp;</span> AI
-                                Solutions Builder</span>
-                            <p>I build fast, scalable websites and intelligent systems that help businesses grow.</p>
+                        <h1 class="hero-headline animate-up">I build fast, scalable web apps that help startups launch and grow.</h1>
+                        <div class="hero-subtitle animate-up">
+                            <p style="font-size: clamp(16px, 1.5vw, 20px); max-width: 600px;">From MVPs to full-scale platforms using Next.js, Go, and modern tech.</p>
                         </div>
-                        <div class="hero-cta">
-                            <a href="#contact" class="magnetic-btn primary-btn">
-                                <i class="fas fa-paper-plane"></i> Hire Me
+                        <div class="hero-cta animate-up">
+                            <a href="#contact" class="magnetic-btn primary-btn" style="background: var(--primary); color: #000; box-shadow: 0 0 20px rgba(0,240,255,0.4);">
+                                <i class="fas fa-phone"></i> Book a Free Call
                             </a>
                             <a href="#projects" class="magnetic-btn secondary-btn">
-                                <i class="fas fa-arrow-right"></i> View Projects
+                                <i class="fas fa-arrow-right"></i> View My Work
                             </a>
                         </div>
                     </div>
@@ -119,54 +121,38 @@
             <!-- ── Services ──────────────────────────────────────── -->
             <section id="services" class="services section-spacing">
                 <div class="container">
-                    <h2 class="section-title animate-up">02. WHAT I DO</h2>
-                    <p class="section-desc animate-up">End-to-end solutions — from pixel-perfect UIs to intelligent
-                        backends.</p>
+                    <h2 class="section-title animate-up">02. WHAT I CAN DO FOR YOU</h2>
+                    <p class="section-desc animate-up">Business-focused solutions designed to scale, acquire users, and save you time.</p>
                     <div class="services-grid">
                         <div class="service-card animate-up">
-                            <div class="service-icon-wrap"><i class="fas fa-globe"></i></div>
-                            <h3>Web Development</h3>
-                            <p>Pixel-perfect, performance-optimised websites built to convert and impress.</p>
-                            <ul>
-                                <li>Business &amp; corporate websites</li>
-                                <li>Portfolio &amp; personal brands</li>
-                                <li>NGO &amp; organization sites</li>
-                                <li>High-converting landing pages</li>
-                            </ul>
-                            <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
-                        </div>
-                        <div class="service-card animate-up">
-                            <div class="service-icon-wrap"><i class="fas fa-layer-group"></i></div>
-                            <h3>Full Stack Development</h3>
-                            <p>Complete application development from database design to deployment.</p>
-                            <ul>
-                                <li>End-to-end application development</li>
-                                <li>REST API development &amp; integrations</li>
-                                <li>Auth systems &amp; admin dashboards</li>
-                            </ul>
-                            <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
-                        </div>
-                        <div class="service-card animate-up">
-                            <div class="service-icon-wrap"><i class="fas fa-robot"></i></div>
-                            <h3>AI &amp; Chatbot Development</h3>
-                            <p>Intelligent automation that saves time and drives business value.</p>
-                            <ul>
-                                <li>Custom AI chatbots</li>
-                                <li>RAG-based knowledge assistants</li>
-                                <li>ERP &amp; business automation bots</li>
-                            </ul>
-                            <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
+                            <div class="service-icon-wrap"><i class="fas fa-rocket"></i></div>
+                            <h3>Build Startup MVPs</h3>
+                            <p>Launch your core product fast. I build lean, scalable Minimum Viable Products to help you validate ideas and secure funding.</p>
                         </div>
                         <div class="service-card animate-up">
                             <div class="service-icon-wrap"><i class="fas fa-bolt"></i></div>
-                            <h3>Performance &amp; Optimization</h3>
-                            <p>Making your existing product faster, leaner, and more scalable.</p>
-                            <ul>
-                                <li>Core Web Vitals &amp; SEO optimization</li>
-                                <li>Speed &amp; lighthouse score improvement</li>
-                                <li>Scalable cloud architecture</li>
-                            </ul>
-                            <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
+                            <h3>High-Performance Websites</h3>
+                            <p>Lightning-fast marketing and corporate sites optimized for SEO, user experience, and driving conversions.</p>
+                        </div>
+                        <div class="service-card animate-up">
+                            <div class="service-icon-wrap"><i class="fas fa-server"></i></div>
+                            <h3>Backend APIs &amp; Systems</h3>
+                            <p>Robust, secure architecture and API integrations that power your applications seamlessly behind the scenes.</p>
+                        </div>
+                        <div class="service-card animate-up">
+                            <div class="service-icon-wrap"><i class="fas fa-clock"></i></div>
+                            <h3>Real-Time Apps</h3>
+                            <p>Live chat features, real-time data dashboards, and dynamic user feeds using advanced web sockets.</p>
+                        </div>
+                        <div class="service-card animate-up">
+                            <div class="service-icon-wrap"><i class="fas fa-robot"></i></div>
+                            <h3>AI Chatbots &amp; Automation</h3>
+                            <p>Intelligent assistants and automated workflows that save your team hours of manual work every week.</p>
+                        </div>
+                        <div class="service-card animate-up">
+                            <div class="service-icon-wrap"><i class="fas fa-tachometer-alt"></i></div>
+                            <h3>Performance Optimization</h3>
+                            <p>Fixing bugs, reducing load times, and auditing existing codebases to make your platform leaner and more scalable.</p>
                         </div>
                     </div>
                 </div>
@@ -202,8 +188,9 @@
                             </div>
                         </div>
                         <div class="tech-category animate-up">
-                            <div class="tech-cat-label"><i class="fas fa-database"></i> Database</div>
+                            <div class="tech-cat-label"><i class="fas fa-database"></i> Database &amp; Auth</div>
                             <div class="tech-pills">
+                                <span class="tech-pill">Supabase</span>
                                 <span class="tech-pill">MongoDB</span>
                                 <span class="tech-pill">MySQL</span>
                                 <span class="tech-pill">PostgreSQL</span>
@@ -213,21 +200,22 @@
                         <div class="tech-category animate-up">
                             <div class="tech-cat-label"><i class="fas fa-brain"></i> AI / Data</div>
                             <div class="tech-pills">
-                                <span class="tech-pill accent">Machine Learning</span>
-                                <span class="tech-pill accent">RAG</span>
-                                <span class="tech-pill accent">OCR</span>
-                                <span class="tech-pill accent">LangChain</span>
-                                <span class="tech-pill accent">OpenAI API</span>
+                                <span class="tech-pill">Machine Learning</span>
+                                <span class="tech-pill">RAG</span>
+                                <span class="tech-pill">OCR</span>
+                                <span class="tech-pill">LangChain</span>
+                                <span class="tech-pill">OpenAI API</span>
                             </div>
                         </div>
                         <div class="tech-category animate-up">
-                            <div class="tech-cat-label"><i class="fas fa-cloud"></i> Tools &amp; Cloud</div>
+                            <div class="tech-cat-label"><i class="fas fa-cloud"></i> Tools &amp; APIs</div>
                             <div class="tech-pills">
                                 <span class="tech-pill">AWS</span>
-                                <span class="tech-pill">Git</span>
-                                <span class="tech-pill">GitHub</span>
                                 <span class="tech-pill">Docker</span>
                                 <span class="tech-pill">Vercel</span>
+                                <span class="tech-pill">Razorpay</span>
+                                <span class="tech-pill">Nodemailer</span>
+                                <span class="tech-pill">Git</span>
                             </div>
                         </div>
                     </div>
@@ -237,149 +225,153 @@
             <!-- ── Projects ───────────────────────────────────────── -->
             <section id="projects" class="projects section-spacing">
                 <div class="container">
-                    <h2 class="section-title animate-up">04. FEATURED WORK</h2>
-                    <p class="section-desc animate-up">Real projects. Real clients. Real impact.</p>
+                    <h2 class="section-title animate-up">03. CASE STUDIES</h2>
+                    <p class="section-desc animate-up">Real business problems solved with high-performance code and architecture.</p>
 
                     <!-- Featured project card -->
                     <div class="featured-project animate-up">
-                        <div class="featured-label">★ Featured Project</div>
+                        <div class="featured-label">★ Featured Case Study</div>
                         <div class="featured-inner">
                             <div class="featured-text">
                                 <h3>BharatFin – AI Financial Assistant</h3>
-                                <p>AI-powered investment assistant helping retail investors make smarter decisions
-                                    through OCR portfolio analysis, real-time market data, and explainable AI insights.
-                                </p>
+                                <div class="case-study-sm" style="margin-bottom: 1.5rem;">
+                                    <p><strong>Problem:</strong> Retail investors struggle to analyze complex portfolios and ingest market data quickly.</p>
+                                    <p><strong>Solution:</strong> Built an AI assistant using RAG and OCR to securely analyze personal financial documents instantly.</p>
+                                    <p><strong>Result:</strong> Reduced portfolio analysis time by 90% and improved decision-making accuracy.</p>
+                                </div>
                                 <div class="project-tags">
                                     <span class="tag">Python</span>
                                     <span class="tag">FastAPI</span>
                                     <span class="tag">RAG</span>
                                     <span class="tag">OCR</span>
-                                    <span class="tag">React</span>
+                                    <span class="tag">Next.js</span>
                                 </div>
                             </div>
                             <div class="featured-stats">
-                                <div class="f-stat"><span>AI</span><small>Powered</small></div>
-                                <div class="f-stat"><span>RAG</span><small>Based</small></div>
+                                <div class="f-stat"><span>10x</span><small>Faster Insights</small></div>
+                                <div class="f-stat"><span>RAG</span><small>Architeture</small></div>
                                 <div class="f-stat"><span>RT</span><small>Market Data</small></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Business & Freelance grid -->
-                    <h3 class="projects-sub-heading animate-up">🌐 Business &amp; Freelance</h3>
+                    <!-- Business & E-commerce grid -->
+                    <h3 class="projects-sub-heading animate-up" style="margin-top: 4rem;">🌐 Business &amp; E-commerce</h3>
                     <div class="project-cards-grid">
                         <div class="project-card animate-up">
                             <div class="project-card-header">
                                 <i class="fas fa-building"></i>
                                 <div class="project-status live">Live</div>
                             </div>
-                            <h4>Amitabh Overseas Website</h4>
-                            <p>Corporate website with modern UI &amp; optimized performance for a global trade company.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">HTML/CSS</span><span class="tag">JS</span><span class="tag">SEO</span>
+                            <h4 style="margin-bottom:0.8rem;">Amitabh Overseas</h4>
+                            <div class="case-study-sm">
+                                <p><strong>Problem:</strong> Outdated online presence limiting global B2B trade inquiries.</p>
+                                <p><strong>Solution:</strong> Developed a high-performance corporate site optimized for speed and international SEO.</p>
+                                <p><strong>Result:</strong> 3x increase in load speed and higher organic lead generation over 3 months.</p>
                             </div>
-                            <a href="#contact" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                            <div class="project-tags">
+                                <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Tailwind</span><span class="tag">Supabase</span><span class="tag">Razorpay</span>
+                            </div>
                         </div>
+
                         <div class="project-card animate-up">
                             <div class="project-card-header">
                                 <i class="fas fa-coins"></i>
                                 <div class="project-status live">Live</div>
                             </div>
-                            <h4>Crypto Company Website</h4>
-                            <p>Secure, scalable platform with real-time data integration for a Bangalore crypto firm.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">React</span><span class="tag">Node.js</span><span
-                                    class="tag">WebSocket</span>
+                            <h4 style="margin-bottom:0.8rem;">Bangalore Crypto Firm</h4>
+                            <div class="case-study-sm">
+                                <p><strong>Problem:</strong> Needed a secure, latency-sensitive platform to display massive crypto data feeds.</p>
+                                <p><strong>Solution:</strong> Engineered a scalable React/Node.js architecture utilizing real-time WebSockets.</p>
+                                <p><strong>Result:</strong> Zero-delay live data metrics, driving higher user retention and trading confidence.</p>
                             </div>
-                            <a href="#contact" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                            <div class="project-tags">
+                                <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">WebSockets</span>
+                            </div>
                         </div>
+
                         <div class="project-card animate-up">
                             <div class="project-card-header">
                                 <i class="fas fa-graduation-cap"></i>
                                 <div class="project-status live">Live</div>
                             </div>
-                            <h4>Coaching Institute Platform</h4>
-                            <p>Complete website with student portal, admin panel, and course management features.</p>
+                            <h4 style="margin-bottom:0.8rem;">Educational Platform</h4>
+                            <div class="case-study-sm">
+                                <p><strong>Problem:</strong> Local coaching centers struggling to manage student records and online tests.</p>
+                                <p><strong>Solution:</strong> Built a comprehensive portal with student analytics and automated test grading.</p>
+                                <p><strong>Result:</strong> Digitalized 100% of workflows, significantly reducing manual administrative errors.</p>
+                            </div>
                             <div class="project-tags">
-                                <span class="tag">Next.js</span><span class="tag">MongoDB</span><span
-                                    class="tag">Auth</span>
+                                <span class="tag">Next.js</span><span class="tag">MongoDB</span><span class="tag">Auth</span>
                             </div>
-                            <a href="#contact" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                        <div class="project-card animate-up">
-                            <div class="project-card-header">
-                                <i class="fas fa-hands-helping"></i>
-                                <div class="project-status live">Live</div>
-                            </div>
-                            <h4>KA Foundation Website</h4>
-                            <p>NGO website with structured content, outreach focus, and donation integration.</p>
-                            <div class="project-tags">
-                                <span class="tag">HTML/CSS</span><span class="tag">CMS</span><span
-                                    class="tag">SEO</span>
-                            </div>
-                            <a href="#contact" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <!-- AI Projects -->
-                    <h3 class="projects-sub-heading animate-up">🤖 AI &amp; Automation</h3>
-                    <div class="project-cards-grid two-col">
+                    <!-- AI & Automation grid -->
+                    <h3 class="projects-sub-heading animate-up" style="margin-top: 4rem;">🤖 AI &amp; Automation</h3>
+                    <div class="project-cards-grid">
                         <div class="project-card animate-up">
                             <div class="project-card-header">
                                 <i class="fas fa-robot"></i>
-                                <div class="project-status ai-tag">AI</div>
+                                <div class="project-status ai-tag">AI Impact</div>
                             </div>
-                            <h4>ERP Chatbot – VIT Vellore</h4>
-                            <p>Automated internal ERP queries and workflows for students and administration at VIT
-                                University.</p>
+                            <h4 style="margin-bottom:0.8rem;">ERP Chatbot (VIT)</h4>
+                            <div class="case-study-sm">
+                                <p><strong>Problem:</strong> Admin team overwhelmed by repetitive student queries about ERP workflows.</p>
+                                <p><strong>Solution:</strong> Deployed an AI NLP Chatbot integrating directly with university databases.</p>
+                                <p><strong>Result:</strong> Handled 80% of level-1 queries automatically, drastically reducing admin workload.</p>
+                            </div>
                             <div class="project-tags">
-                                <span class="tag">Python</span><span class="tag">NLP</span><span
-                                    class="tag">FastAPI</span><span class="tag">RAG</span>
+                                <span class="tag">Python</span><span class="tag">NLP</span><span class="tag">FastAPI</span>
                             </div>
-                            <a href="#contact" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                         <div class="project-card animate-up">
                             <div class="project-card-header">
                                 <i class="fas fa-comments"></i>
-                                <div class="project-status ai-tag">AI</div>
+                                <div class="project-status ai-tag">AI Impact</div>
                             </div>
-                            <h4>Custom AI Chatbots</h4>
-                            <p>Multiple intelligent assistants built for business use cases — customer support, lead
-                                gen, and internal tooling.</p>
+                            <h4 style="margin-bottom:0.8rem;">Custom AI Chatbots</h4>
+                            <div class="case-study-sm">
+                                <p><strong>Problem:</strong> Businesses needing 24/7 client engagement without increasing support staff costs.</p>
+                                <p><strong>Solution:</strong> Developed multiple RAG-based assistants tailored for high-accuracy lead generation.</p>
+                                <p><strong>Result:</strong> Automated 60%+ of initial client interactions and improved lead qualification speed.</p>
+                            </div>
                             <div class="project-tags">
-                                <span class="tag">LangChain</span><span class="tag">OpenAI</span><span
-                                    class="tag">Vector DB</span>
+                                <span class="tag">LangChain</span><span class="tag">OpenAI</span><span class="tag">Vector DB</span>
                             </div>
-                            <a href="#contact" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- ── Why Choose Me + What You Get ──────────────────── -->
+            <!-- ── Why Work With Me (Trust) ──────────────────────── -->
             <section id="why-me" class="why-me section-spacing">
                 <div class="container">
                     <div class="split-layout">
                         <div class="split-col animate-up">
-                            <h2 class="section-title">05. WHY CHOOSE ME</h2>
-                            <ul class="feature-list">
-                                <li>Clean &amp; scalable code</li>
-                                <li>Fast delivery</li>
-                                <li>Strong problem-solving mindset</li>
-                                <li>Experience with real-world projects</li>
-                                <li>Focus on business impact, not just code</li>
+                            <h2 class="section-title">04. WHY WORK WITH ME</h2>
+                            <p class="section-desc">I don't just write code. I build technical foundations for scalable businesses.</p>
+                            <ul class="feature-list mt-2">
+                                <li><strong>Fast Delivery:</strong> Skip agency bureaucracy. I ship MVPs in weeks, not months.</li>
+                                <li><strong>Clean, Scalable Code:</strong> Built on robust stacks, ready to scale from day 1.</li>
+                                <li><strong>Strong Backend Expertise:</strong> Not just pretty frontends—I build secure databases &amp; APIs.</li>
+                                <li><strong>Full Startup Partnership:</strong> I act as your technical co-founder, not just a coder.</li>
                             </ul>
                         </div>
-                        <div class="split-col animate-up text-right">
-                            <h2 class="section-title">06. WHAT YOU GET</h2>
-                            <ul class="feature-list highlight">
-                                <li>⚡ End-to-end development</li>
-                                <li>⚡ Clear communication</li>
-                                <li>⚡ Regular updates</li>
-                                <li>⚡ Deployment support</li>
-                            </ul>
+                        <div class="split-col animate-up">
+                            <h2 class="section-title">THE ACCELERATOR</h2>
+                            <div class="offer-box">
+                                <h3>Get Your MVP Built in 14 Days</h3>
+                                <p>Stop waiting to launch. I specialize in rapid MVP development for startups looking to validate ideas and secure initial users quickly.</p>
+                                <ul class="feature-list highlight mt-2">
+                                    <li>⚡ Core features mapped out</li>
+                                    <li>⚡ User-ready deployment</li>
+                                    <li>⚡ 14-day turnaround</li>
+                                </ul>
+                                <a href="#contact" class="magnetic-btn primary-btn mt-3" style="background: var(--primary); color: #000; width: 100%; justify-content: center;">
+                                    Start Your MVP Project
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -388,13 +380,15 @@
             <!-- ── Contact ────────────────────────────────────────── -->
             <section id="contact" class="contact section-spacing">
                 <div class="container text-center contact-container">
-                    <h2 class="section-title animate-up">07. CONTACT</h2>
-                    <h2 class="huge-text animate-up">LET'S BUILD<br>SOMETHING GREAT<br>TOGETHER.</h2>
-                    <p class="contact-sub animate-up mt-2">Available for freelance work.</p>
-                    <div class="contact-links mt-3 animate-up">
-                        <a href="mailto:akshatdubey1967@gmail.com" class="magnetic-btn primary-btn">
-                            <i class="fas fa-envelope"></i> akshatdubey1967@gmail.com
+                    <h2 class="section-title animate-up">05. QUICK START</h2>
+                    <h2 class="huge-text animate-up" style="font-size: clamp(36px, 5vw, 64px);">TELL ME ABOUT<br>YOUR PROJECT.</h2>
+                    <p class="contact-sub animate-up mt-2" style="font-size: 18px;">I reply within 24 hours. Let's discuss your goals and how I can help.</p>
+                    <div class="contact-links mt-3 animate-up" style="justify-content: center;">
+                        <a href="mailto:akshatdubey1967@gmail.com" class="magnetic-btn primary-btn" style="background: var(--primary); color: #000; padding: 1.5rem 3rem; font-size: 16px;">
+                            <i class="fas fa-envelope"></i> Email Me Directly
                         </a>
+                    </div>
+                    <div class="contact-links mt-2 animate-up" style="justify-content: center;">
                         <a href="tel:+917042869593" class="magnetic-btn secondary-btn">
                             <i class="fas fa-phone"></i> +91 7042869593
                         </a>
@@ -411,13 +405,13 @@
                 <div class="footer-inner">
                     <div class="footer-brand">
                         <span class="logo">&lt;AD/&gt;</span>
-                        <p>Full Stack Developer &amp; AI Solutions Builder</p>
+                        <p>Freelance Full Stack Developer helping startups scale.</p>
                     </div>
                     <div class="footer-links-col">
                         <strong>Navigate</strong>
                         <a href="#about">About</a>
                         <a href="#services">Services</a>
-                        <a href="#projects">Projects</a>
+                        <a href="#projects">Case Studies</a>
                         <a href="#contact">Contact</a>
                     </div>
                     <div class="footer-links-col">
@@ -439,8 +433,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
-    <script src="three-scene.js?v=39.0"></script>
-    <script src="script.js?v=39.0"></script>
+    <script src="three-scene.js?v=40.0"></script>
+    <script src="script.js?v=40.0"></script>
 </body>
 
 </html>

@@ -169,7 +169,7 @@ html {
 }
 
 .section-spacing {
-    padding: 15vh 0;
+    padding: 20vh 0;
     min-height: 80vh;
     display: flex;
     flex-direction: column;
@@ -539,12 +539,13 @@ a {
     mix-blend-mode: overlay;
 }
 
-.hero-title {
-    font-size: clamp(70px, 12vw, 150px);
-    line-height: 0.85;
-    letter-spacing: -0.04em;
-    margin-bottom: 2.5rem;
-    text-transform: uppercase;
+.hero-headline {
+    font-family: var(--font-heading);
+    font-size: clamp(36px, 5.5vw, 68px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+    font-weight: 800;
     background: linear-gradient(135deg, #ffffff 0%, #a0a8c2 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -599,35 +600,20 @@ a {
 }
 
 .primary-btn {
-    background: transparent;
-    color: #fff;
-    border: 1px solid var(--primary);
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
-}
-
-.primary-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background: var(--primary);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    z-index: -1;
+    color: #000;
+    border: 1px solid var(--primary);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+    font-weight: 700;
+    border-radius: 100px;
 }
 
 .primary-btn:hover {
     color: #000;
-    box-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+    background: #fff;
+    border-color: #fff;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
     transform: translateY(-2px);
-}
-
-.primary-btn:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
 }
 
 .secondary-btn {
@@ -671,6 +657,16 @@ a {
 
 
 /* --- Why Me Section --- */
+.why-me {
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 240, 255, 0.02) 50%, transparent 100%);
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.contact {
+    background: radial-gradient(circle at top, rgba(0, 240, 255, 0.04) 0%, transparent 60%);
+}
 .split-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -686,8 +682,9 @@ a {
     font-size: 18px;
     color: var(--text-light);
     margin-bottom: 1.2rem;
-    display: flex;
-    align-items: center;
+    position: relative;
+    padding-left: 28px;
+    line-height: 1.6;
 }
 
 .feature-list li::before {
@@ -696,7 +693,9 @@ a {
     font-weight: 900;
     color: var(--tertiary);
     font-size: 14px;
-    margin-right: 15px;
+    position: absolute;
+    left: 0;
+    top: 6px;
 }
 
 .text-right .feature-list li {
@@ -726,6 +725,35 @@ a {
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.offer-box {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.05), rgba(0, 0, 0, 0.4));
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: left;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 240, 255, 0.05) inset;
+}
+
+.offer-box h3 {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #fff;
+    letter-spacing: -0.5px;
+}
+
+.offer-box p {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+.offer-box .magnetic-btn {
+    box-shadow: 0 4px 15px rgba(0, 240, 255, 0.3);
+}
+
 
 .feature-list.highlight li::before,
 .feature-list.highlight li::after {
@@ -1233,6 +1261,7 @@ a {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .service-card:hover {
@@ -1247,27 +1276,6 @@ a {
     margin-bottom: 1.2rem;
     color: #fff;
     font-weight: 600;
-}
-
-.service-card ul {
-    list-style: none;
-    margin-bottom: 2rem;
-    flex: 1;
-}
-
-.service-card li {
-    font-size: 14px;
-    color: var(--text-light);
-    margin-bottom: 0.8rem;
-    display: flex;
-    align-items: flex-start;
-}
-
-.service-card li::before {
-    content: '→';
-    color: var(--primary);
-    margin-right: 10px;
-    font-weight: bold;
 }
 
 .service-icon-wrap {
@@ -1295,10 +1303,11 @@ a {
 }
 
 .service-card>p {
-    font-size: 14px;
-    color: var(--text-darker);
-    margin-bottom: 1rem;
+    font-size: 15px; /* Slightly larger */
+    color: var(--text-light); /* Brighter */
+    margin-bottom: 0;
     line-height: 1.6;
+    flex: 1; /* Push everything else down or just fill space */
 }
 
 .card-arrow {
@@ -1410,31 +1419,7 @@ a {
     box-shadow: 0 5px 15px rgba(0, 240, 255, 0.15);
 }
 
-/* AI Category specialized styling */
-.tech-pill.accent {
-    background: rgba(124, 58, 237, 0.08);
-    border-color: rgba(124, 58, 237, 0.2);
-    color: #a78bfa;
-}
 
-.tech-pill.accent:hover {
-    background: rgba(124, 58, 237, 0.2);
-    border-color: var(--secondary);
-    color: #fff;
-    box-shadow: 0 5px 15px rgba(124, 58, 237, 0.2);
-}
-
-.tech-category:nth-child(4)::before {
-    background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.12), transparent 60%);
-}
-
-.tech-category:nth-child(4):hover {
-    border-color: rgba(124, 58, 237, 0.35);
-}
-
-.tech-category:nth-child(4) .tech-cat-label i {
-    color: var(--secondary);
-}
 
 /* ── Featured Project ───────────────────────────────────── */
 .featured-project {
@@ -1644,6 +1629,24 @@ a {
     flex: 1;
 }
 
+.case-study-sm {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.case-study-sm p {
+    font-size: 13.5px;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.case-study-sm strong {
+    color: var(--text-main);
+    font-weight: 700;
+}
+
 .project-tags {
     display: flex;
     flex-wrap: wrap;
@@ -1758,8 +1761,22 @@ footer {
         flex-direction: row;
     }
 
+    .project-cards-grid,
     .project-cards-grid.two-col {
         grid-template-columns: 1fr;
+    }
+
+    .tech-categories {
+        grid-template-columns: 1fr;
+    }
+
+    .split-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .service-card {
+        padding: 2rem 1.5rem;
     }
 
     .footer-inner {
