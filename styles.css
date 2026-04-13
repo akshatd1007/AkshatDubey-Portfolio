@@ -973,6 +973,9 @@ a {
 @media (max-width: 768px) {
     .magnetic-btn {
         width: 100%;
+        display: flex;
+        box-sizing: border-box;
+        margin: 0 auto;
     }
 
     .hero-cta {
