@@ -21,7 +21,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=51.0">
+    <link rel="stylesheet" href="styles.css?v=56.0">
 </head>
 
 <body>
@@ -31,7 +31,7 @@
 
     <!-- Page loader -->
     <div id="page-loader">
-        <div class="loader-logo">&lt;AD/&gt;</div>
+        <div class="loader-logo"><img src="logo_bgwithout.png" alt="Akshat Dubey" class="loader-logo-img"></div>
         <div class="loader-bar">
             <div class="loader-fill"></div>
         </div>
@@ -42,7 +42,9 @@
 
             <!-- ── Navigation ─────────────────────────────────────── -->
             <nav id="navbar">
-                <a href="#home" class="logo">&lt;AD/&gt;</a>
+                <a href="#home" class="logo">
+                    <img src="logo_bgwithout.png" alt="Akshat Dubey Logo" class="logo-img">
+                </a>
 
                 <ul class="nav-links">
                     <li><a href="#home" class="nav-link">Home</a></li>
@@ -61,6 +63,49 @@
                 </div>
                 <div id="scroll-progress"></div>
             </nav>
+
+            <!-- ── Floating Resume Button ──────────────────────── -->
+            <a id="resume-fab" href="javascript:void(0)" onclick="openResumeModal()" aria-label="View Resume">
+                <span class="resume-fab-icon"><i class="fas fa-file-alt"></i></span>
+                <span class="resume-fab-label">Resume</span>
+            </a>
+
+            <!-- ── Resume Modal ────────────────────────────────── -->
+            <div id="resume-modal" class="resume-modal" role="dialog" aria-modal="true" aria-label="Resume Viewer">
+                <div class="resume-modal-overlay" onclick="closeResumeModal()"></div>
+                <div class="resume-modal-panel">
+                    <div class="resume-modal-header">
+                        <div class="resume-modal-title">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Akshat Dubey — Resume</span>
+                            <span class="resume-modal-badge">B.Tech • Full Stack • AI</span>
+                        </div>
+                        <div class="resume-modal-actions">
+                            <a href="AkshatD_Btech.pdf" download="AkshatDubey_Resume.pdf" class="resume-action-btn download-btn" title="Download PDF">
+                                <i class="fas fa-download"></i>
+                                <span>Download</span>
+                            </a>
+                            <a href="AkshatD_Btech.pdf" target="_blank" rel="noopener" class="resume-action-btn open-btn" title="Open in new tab">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Open</span>
+                            </a>
+                            <button class="resume-close-btn" onclick="closeResumeModal()" aria-label="Close">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="resume-modal-body">
+                        <iframe id="resume-iframe" src="" title="Akshat Dubey Resume" class="resume-iframe" loading="lazy"></iframe>
+                        <div class="resume-fallback">
+                            <i class="fas fa-file-pdf"></i>
+                            <p>PDF preview not available in this browser.</p>
+                            <a href="AkshatD_Btech.pdf" download="AkshatDubey_Resume.pdf" class="resume-action-btn download-btn">
+                                <i class="fas fa-download"></i> Download Resume
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- ── Hero ──────────────────────────────────────────── -->
             <section id="home" class="hero section-spacing">
@@ -431,47 +476,36 @@
             <!-- ── Trust / Proof ─────────────────────────────────────── -->
             <section id="proof" class="proof-section" style="padding: 2rem 0 6rem 0;">
                 <div class="container text-center">
-                    <h3
-                        style="color: var(--text-darker); font-size: 14px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2rem;">
-                        Proven Track Record</h3>
-                    <div class="hero-stats animate-up" style="justify-content: center; gap: 2rem; flex-wrap: wrap;">
-                        <div class="stat-item"
-                            style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 12px; border: 1px solid var(--glass-border); min-width: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-                            <i class="fas fa-laptop-code"
-                                style="color: var(--primary); font-size: 24px; margin-bottom: 1rem;"></i>
-                            <h4 style="font-size: 16px; margin: 0; color: #fff; line-height: 1.4;">Web Development
-                                Intern<br><span
-                                    style="font-size: 14px; color: var(--text-darker); font-weight: normal; display: block; margin-top: 0.5rem;">at
-                                    CRIS, New Delhi</span></h4>
+                    <h2 class="section-title animate-up" style="justify-content: center; margin-bottom: 2.5rem;">
+                        Proven Track Record
+                    </h2>
+                    <div class="proof-grid animate-up">
+
+                        <div class="proof-card">
+                            <i class="fas fa-laptop-code proof-icon"></i>
+                            <h4 class="proof-title">Web Development Intern</h4>
+                            <p class="proof-sub">at CRIS, New Delhi</p>
                         </div>
-                        <div class="stat-item"
-                            style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 12px; border: 1px solid var(--glass-border); min-width: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-                            <i class="fas fa-network-wired"
-                                style="color: var(--primary); font-size: 24px; margin-bottom: 1rem;"></i>
-                            <h4 style="font-size: 16px; margin: 0; color: #fff; line-height: 1.4;">System Support
-                                Intern<br><span
-                                    style="font-size: 14px; color: var(--text-darker); font-weight: normal; display: block; margin-top: 0.5rem;">at
-                                    CCDC, New Delhi</span></h4>
+
+                        <div class="proof-card">
+                            <i class="fas fa-network-wired proof-icon"></i>
+                            <h4 class="proof-title">System Support Intern</h4>
+                            <p class="proof-sub">at CCDC, New Delhi</p>
                         </div>
-                        <div class="stat-item"
-                            style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 12px; border: 1px solid var(--glass-border); min-width: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-                            <i class="fas fa-users"
-                                style="color: var(--primary); font-size: 24px; margin-bottom: 1rem;"></i>
-                            <h4 style="font-size: 16px; margin: 0; color: #fff; line-height: 1.4;">Volunteer<br><span
-                                    style="font-size: 14px; color: var(--text-darker); font-weight: normal; display: block; margin-top: 0.5rem;">at
-                                    MILESTONE NGO, New Delhi</span></h4>
+
+                        <div class="proof-card">
+                            <i class="fas fa-users proof-icon"></i>
+                            <h4 class="proof-title">Volunteer</h4>
+                            <p class="proof-sub">at MILESTONE NGO, New Delhi</p>
                         </div>
-                        <div class="stat-item"
-                            style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 12px; border: 1px solid var(--glass-border); min-width: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-                            <i class="fas fa-briefcase"
-                                style="color: var(--primary); font-size: 24px; margin-bottom: 1rem;"></i>
-                            <h4 style="font-size: 16px; margin: 0; color: #fff; line-height: 1.4;">System Engineer
-                                (Trainee)<br><span
-                                    style="font-size: 14px; color: var(--text-darker); font-weight: normal; display: block; margin-top: 0.5rem;">Selected
-                                    at Infosys • 2026<br><small
-                                        style="font-size: 12px; opacity: 0.8; display: block; margin-top: 0.3rem;">Among
-                                        top candidates selected through campus recruitment</small></span></h4>
+
+                        <div class="proof-card">
+                            <i class="fas fa-briefcase proof-icon"></i>
+                            <h4 class="proof-title">System Engineer (Trainee)</h4>
+                            <p class="proof-sub">Selected at Infosys • 2026</p>
+                            <span class="proof-tag">Campus Recruit</span>
                         </div>
+
                     </div>
                 </div>
             </section>
@@ -505,7 +539,9 @@
             <footer>
                 <div class="footer-inner">
                     <div class="footer-brand">
-                        <span class="logo">&lt;AD/&gt;</span>
+                        <span class="logo">
+                            <img src="logo_bgwithout.png" alt="Akshat Dubey Logo" class="logo-img logo-img--footer">
+                        </span>
                         <p>Freelance Full Stack Developer helping startups scale.</p>
                     </div>
                     <div class="footer-links-col">
@@ -536,6 +572,49 @@
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
     <script src="three-scene.js?v=40.0"></script>
     <script src="script.js?v=40.0"></script>
+
+    <script>
+        const RESUME_PDF = 'AkshatD_Btech.pdf';
+
+        function openResumeModal() {
+            const modal = document.getElementById('resume-modal');
+            const iframe = document.getElementById('resume-iframe');
+            // Lazy-load the PDF only when opening
+            if (!iframe.src || iframe.src === window.location.href) {
+                iframe.src = RESUME_PDF;
+            }
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            // Animate in
+            requestAnimationFrame(() => {
+                modal.querySelector('.resume-modal-panel').style.transform = 'translateY(0) scale(1)';
+                modal.querySelector('.resume-modal-panel').style.opacity = '1';
+            });
+        }
+
+        function closeResumeModal() {
+            const modal = document.getElementById('resume-modal');
+            const panel = modal.querySelector('.resume-modal-panel');
+            panel.style.transform = 'translateY(30px) scale(0.97)';
+            panel.style.opacity = '0';
+            setTimeout(() => {
+                modal.classList.remove('open');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        // Close with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeResumeModal();
+        });
+
+        // FAB entrance animation
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('resume-fab').classList.add('visible');
+            }, 2500);
+        });
+    </script>
 </body>
 
 </html>
