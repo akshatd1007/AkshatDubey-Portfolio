@@ -411,10 +411,15 @@ a {
     }
 }
 
-/* Mobile — hide links, show hamburger later */
+/* Mobile nav — hide desktop links + CTA pill */
 @media (max-width: 860px) {
-    .nav-links, .nav-cta {
+    .nav-links {
         display: none !important;
+    }
+    /* The nav CTA is also .magnetic-btn, so target it specifically */
+    a.nav-cta {
+        display: none !important;
+        width: auto !important;
     }
 }
 
@@ -856,72 +861,9 @@ a {
 
 
 
-/* --- Responsive Adjustments --- */
-@media (max-width: 900px) {
-    .split-layout {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .text-right,
-    .text-right .feature-list li {
-        text-align: left;
-        justify-content: flex-start;
-    }
-
-    .text-right .feature-list li::after {
-        display: none;
-    }
-
-    .text-right .feature-list li::before {
-        display: inline-block;
-        content: '\f135';
-        color: var(--primary);
-        margin-left: 0;
-        margin-right: 15px;
-    }
-}
-
-@media (max-width: 768px) {
-    .magnetic-btn {
-        width: 100%;
-    }
-
-    .hero-cta {
-        flex-direction: column;
-    }
-
-    .hero-subtitle {
-        border-left: none;
-        padding-left: 0;
-    }
-
-    .stack-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-        padding: 1.5rem 0;
-    }
-
-    .stack-item:hover {
-        padding-left: 1rem;
-    }
-
-    .project-row {
-        padding: 1.5rem;
-    }
-
-    .project-row::after {
-        display: none;
-    }
-
-    .contact-links {
-        flex-direction: column;
-    }
-}
-
-
-/* --- Responsive: Tablet ----------------------------------------- */
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE — Tablet (max 1024px)
+══════════════════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
     .hero-content {
         flex-direction: column;
@@ -939,13 +881,10 @@ a {
     .hero-image-wrapper {
         width: 100%;
         max-width: 500px;
-        height: 600px;
+        height: 500px;
         margin: 0 auto;
     }
-}
 
-
-@media (max-width: 900px) {
     .split-layout {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -970,16 +909,55 @@ a {
     }
 }
 
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE — Mobile (max 768px)
+══════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
-    .magnetic-btn {
-        width: 100%;
-        display: flex;
-        box-sizing: border-box;
-        margin: 0 auto;
+
+    /* --- Layout --- */
+    .section-spacing {
+        padding: 10vh 0;
+        min-height: auto;
     }
 
+    /* --- Typography --- */
+    .hero-headline {
+        font-size: clamp(32px, 8vw, 52px);
+    }
+
+    /* --- Hero --- */
     .hero-cta {
         flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* CTA buttons in hero — full width */
+    .hero-cta .magnetic-btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    /* Contact buttons — full width */
+    .contact-links .magnetic-btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    /* Offer box button — full width */
+    .offer-box .magnetic-btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .hero-subtitle {
+        border-left: none;
+        padding-left: 0;
     }
 
     .hero-subtitle p {
@@ -987,13 +965,78 @@ a {
     }
 
     .hero-image-wrapper {
-        height: 450px;
+        height: 380px;
     }
 
+    /* --- Stats --- */
+    .hero-stats {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+        padding: 1.2rem 1.5rem;
+    }
 
+    .stat-divider {
+        display: none;
+    }
 
+    /* --- Tech Stack --- */
+    .stack-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 1.5rem 0;
+    }
+
+    /* --- Project cards --- */
+    .project-row {
+        padding: 1.5rem;
+    }
+
+    .project-row::after {
+        display: none;
+    }
+
+    .project-cards-grid,
+    .project-cards-grid.two-col {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-inner {
+        flex-direction: column;
+    }
+
+    .featured-stats {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    /* --- Tech Categories --- */
+    .tech-categories {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Contact --- */
     .contact-links {
         flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* --- Services --- */
+    .service-card {
+        padding: 2rem 1.5rem;
+    }
+
+    /* --- Why Me --- */
+    .split-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    /* --- Footer --- */
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 }
 
@@ -1752,47 +1795,4 @@ footer {
     font-size: 14px;
     color: var(--text-darker);
     letter-spacing: 1px;
-}
-
-@media (max-width: 768px) {
-    .hero-stats {
-        flex-wrap: wrap;
-        gap: 1.5rem;
-        justify-content: center;
-    }
-
-    .stat-divider {
-        display: none;
-    }
-
-    .featured-inner {
-        flex-direction: column;
-    }
-
-    .featured-stats {
-        flex-direction: row;
-    }
-
-    .project-cards-grid,
-    .project-cards-grid.two-col {
-        grid-template-columns: 1fr;
-    }
-
-    .tech-categories {
-        grid-template-columns: 1fr;
-    }
-
-    .split-layout {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .service-card {
-        padding: 2rem 1.5rem;
-    }
-
-    .footer-inner {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
 }
