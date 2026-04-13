@@ -208,7 +208,6 @@ html {
     height: 70px;
     background-color: rgba(0, 240, 255, 0.05);
     border-color: var(--primary);
-    backdrop-filter: blur(2px);
 }
 
 /* --- WebGL Background --- */
@@ -667,6 +666,7 @@ a {
 .contact {
     background: radial-gradient(circle at top, rgba(0, 240, 255, 0.04) 0%, transparent 60%);
 }
+
 .split-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1303,11 +1303,14 @@ a {
 }
 
 .service-card>p {
-    font-size: 15px; /* Slightly larger */
-    color: var(--text-light); /* Brighter */
+    font-size: 15px;
+    /* Slightly larger */
+    color: var(--text-light);
+    /* Brighter */
     margin-bottom: 0;
     line-height: 1.6;
-    flex: 1; /* Push everything else down or just fill space */
+    flex: 1;
+    /* Push everything else down or just fill space */
 }
 
 .card-arrow {
@@ -1427,7 +1430,7 @@ a {
     padding: 3rem;
     margin-bottom: 3rem;
     border-radius: 24px;
-    background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -1438,9 +1441,12 @@ a {
 .featured-project::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: radial-gradient(800px circle at top left, rgba(0, 240, 255, 0.08), transparent 40%),
-                radial-gradient(800px circle at bottom right, rgba(124, 58, 237, 0.08), transparent 40%);
+        radial-gradient(800px circle at bottom right, rgba(124, 58, 237, 0.08), transparent 40%);
     z-index: 0;
     pointer-events: none;
 }
@@ -1474,7 +1480,11 @@ a {
     z-index: 2;
 }
 
-.featured-text { flex: 1; position: relative; z-index: 2; }
+.featured-text {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
 
 .featured-text h3 {
     font-size: clamp(24px, 3vw, 36px);
@@ -1565,7 +1575,7 @@ a {
 .project-card {
     position: relative;
     padding: 1.8rem;
-    background: linear-gradient(145deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
     border: 1px solid var(--glass-border);
     border-radius: 16px;
     transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
@@ -1624,7 +1634,8 @@ a {
 
 .project-card p {
     font-size: 13.5px;
-    color: var(--text-light); /* Brighter for readability on stars */
+    color: var(--text-light);
+    /* Brighter for readability on stars */
     line-height: 1.6;
     flex: 1;
 }
@@ -1657,8 +1668,10 @@ a {
 .tag {
     font-size: 11px;
     font-weight: 500;
-    color: var(--text-light); /* Brighter */
-    background: rgba(255, 255, 255, 0.08); /* Slightly more visible background */
+    color: var(--text-light);
+    /* Brighter */
+    background: rgba(255, 255, 255, 0.08);
+    /* Slightly more visible background */
     border: 1px solid var(--glass-border);
     padding: 4px 12px;
     border-radius: 50px;
@@ -1702,10 +1715,10 @@ footer {
 }
 
 .footer-brand p {
-    font-size: 13px;
+    font-size: 15px;
     color: var(--text-darker);
     line-height: 1.6;
-    max-width: 240px;
+    max-width: 250px;
 }
 
 .footer-links-col {
@@ -1715,16 +1728,16 @@ footer {
 }
 
 .footer-links-col strong {
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--text-main);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
 }
 
 .footer-links-col a {
-    font-size: 13px;
+    font-size: 15px;
     color: var(--text-darker);
     transition: color 0.2s;
 }
@@ -1735,9 +1748,9 @@ footer {
 
 .footer-bottom {
     text-align: center;
-    padding: 1.5rem;
+    padding: 2rem;
     border-top: 1px solid var(--glass-border);
-    font-size: 12px;
+    font-size: 14px;
     color: var(--text-darker);
     letter-spacing: 1px;
 }
