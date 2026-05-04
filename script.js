@@ -174,4 +174,119 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!el.closest('#home')) revealObserver.observe(el);
     });
 
+    // ── 6. Mobile Drawer Toggle ──────────────────────────────────────
+    const hamburger = document.querySelector('.hamburger');
+    const mobileDrawer = document.querySelector('.mobile-menu-drawer');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+
+    if (hamburger && mobileDrawer) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('toggle');
+            mobileDrawer.classList.toggle('open');
+            document.body.style.overflow = mobileDrawer.classList.contains('open') ? 'hidden' : '';
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('toggle');
+                mobileDrawer.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
+    // ── 7. Hero Typing Animation ─────────────────────────────────────
+    const typingElement = document.getElementById('typing-role');
+    if (typingElement) {
+        const roles = [
+            "Full Stack Developer.",
+            "Backend Engineer.",
+            "Freelance Partner.",
+            "Tech Consultant."
+        ];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        function typeEffect() {
+            const currentRole = roles[roleIndex];
+            if (isDeleting) {
+                typingElement.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+            
+            if (!isDeleting && charIndex === currentRole.length) {
+                typeSpeed = 2000; // Pause at end
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                typeSpeed = 500; // Pause before new word
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+        setTimeout(typeEffect, 1000);
+    }
+
+    // ── 8. Project Filtering ─────────────────────────────────────────
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card, .featured-project');
+
+    if (filterBtns.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filterValue = btn.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.style.display = card.classList.contains('featured-project') ? 'block' : 'flex';
+                        gsap.fromTo(card, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 });
+                    } else if (card.getAttribute('data-filter') === filterValue) {
+                        card.style.display = card.classList.contains('featured-project') ? 'block' : 'flex';
+                        gsap.fromTo(card, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 });
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
+
+    // ── 9. Contact Form Submission Mock ──────────────────────────────
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+            submitBtn.disabled = true;
+
+            // Simulate form submission (e.g., EmailJS / Formspree)
+            setTimeout(() => {
+                contactForm.reset();
+                formStatus.innerHTML = '<span style="color: #25D366;"><i class="fas fa-check-circle"></i> Message sent successfully! I will reply within 24 hours.</span>';
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+
+                setTimeout(() => {
+                    formStatus.innerHTML = '';
+                }, 5000);
+            }, 1500);
+        });
+    }
+
 });

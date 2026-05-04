@@ -10,6 +10,17 @@
     <meta name="keywords" content="Full Stack Developer, AI Developer, React, Node.js, Next.js, Web Development, India">
     <meta name="author" content="Akshat Dubey">
 
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://akshatdubey.in/">
+    <meta property="og:title" content="Akshat Dubey | Full Stack & AI Developer">
+    <meta property="og:description" content="Building fast, scalable web apps and AI solutions for startups. MVPs in 14 days.">
+    <meta property="og:image" content="https://akshatdubey.in/profile.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Akshat Dubey | Full Stack & AI Developer">
+    <meta name="twitter:description" content="Building fast, scalable web apps and AI solutions for startups.">
+    <meta name="twitter:image" content="https://akshatdubey.in/profile.jpg">
+
     <!-- Anti-caching headers for active development -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
@@ -55,12 +66,17 @@
                 </ul>
 
                 <div class="nav-right">
+                    <a href="https://github.com/akshatd1007" target="_blank" class="nav-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/Akshat-Dubey10" target="_blank" class="nav-icon"
                         aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="mailto:akshatdubey1967@gmail.com" class="nav-icon" aria-label="Email"><i
                             class="fas fa-envelope"></i></a>
                     <a href="#contact" class="nav-cta magnetic-btn">Start Your Project</a>
                 </div>
+                <!-- Hamburger for mobile -->
+                <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <div class="line1"></div><div class="line2"></div><div class="line3"></div>
+                </button>
                 <div id="scroll-progress"></div>
             </nav>
 
@@ -68,6 +84,28 @@
             <a id="resume-fab" href="javascript:void(0)" onclick="openResumeModal()" aria-label="View Resume">
                 <span class="resume-fab-icon"><i class="fas fa-file-alt"></i></span>
                 <span class="resume-fab-label">Resume</span>
+            </a>
+
+            <!-- Mobile Nav Drawer -->
+            <div id="mobile-nav" class="mobile-menu-drawer" role="navigation" aria-label="Mobile navigation">
+                <ul class="mobile-nav-links">
+                    <li><a href="#home" class="mobile-nav-link">Home</a></li>
+                    <li><a href="#about" class="mobile-nav-link">About</a></li>
+                    <li><a href="#services" class="mobile-nav-link">Services</a></li>
+                    <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+                    <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+                    <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+                </ul>
+                <div class="mobile-nav-socials" style="display: flex; gap: 1rem; margin-top: 2rem; justify-content: center; font-size: 1.5rem;">
+                    <a href="https://github.com/akshatd1007" target="_blank" aria-label="GitHub" style="color: var(--text-light);"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/Akshat-Dubey10" target="_blank" aria-label="LinkedIn" style="color: var(--text-light);"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/917042869593" target="_blank" aria-label="WhatsApp" style="color: var(--text-light);"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- WhatsApp FAB -->
+            <a id="whatsapp-fab" class="whatsapp-fab" href="https://wa.me/917042869593?text=Hi%20Akshat%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
             </a>
 
             <!-- ── Resume Modal ────────────────────────────────── -->
@@ -113,13 +151,14 @@
                     <div class="hero-text">
                         <div class="hero-badge" style="margin-bottom: 2rem;">
                             <span class="badge-dot"></span>
-                            Available for freelance work
+                            Open to full-time &amp; freelance roles
                         </div>
-                        <h1 class="hero-headline animate-up">I build fast, scalable web apps that help startups launch
-                            and grow.</h1>
+                        <h1 class="hero-headline animate-up">I build fast, scalable web apps that help startups launch and grow.</h1>
+                        <div class="hero-role-wrap animate-up">
+                            <span class="hero-role-prefix">I'm a </span><span id="typing-role" class="hero-typing"></span><span class="typing-cursor">|</span>
+                        </div>
                         <div class="hero-subtitle animate-up">
-                            <p style="font-size: clamp(16px, 1.5vw, 20px); max-width: 600px;">From MVPs to full-scale
-                                platforms using Next.js, Go, and modern tech.</p>
+                            <p style="font-size: clamp(16px, 1.5vw, 20px); max-width: 600px;">From MVPs to full-scale platforms using Next.js, Python, and modern AI tech.</p>
                         </div>
                         <div class="hero-cta animate-up">
                             <a href="#contact" class="magnetic-btn primary-btn"
@@ -219,65 +258,317 @@
                 </div>
             </section>
 
-            <!-- ── Tech Stack ─────────────────────────────────────── -->
-            <section id="tech-stack" class="tech-stack section-spacing">
+            <!-- ── Why Choose Me ──────────────────────────────────── -->
+            <section id="why-hire-me" class="why-hire-me section-spacing" style="text-align: center;">
                 <div class="container">
-                    <h2 class="section-title animate-up">03. TECH STACK</h2>
-                    <p class="section-desc animate-up">Tools and technologies I use to bring ideas to life.</p>
+                    <div class="hero-badge animate-up" style="margin: 0 auto 1.5rem; display: inline-flex;">
+                        ✨ WHY CHOOSE ME
+                    </div>
+                    <h2 class="section-title animate-up" style="font-size: clamp(32px, 5vw, 42px); text-transform: none; letter-spacing: -0.5px;">Why Hire&nbsp;<span style="color: var(--primary);">Akshat Dubey</span></h2>
+                    <p class="section-desc animate-up" style="max-width: 700px; margin: 0 auto 4rem; line-height: 1.6;">
+                        A dedicated Full Stack Developer who brings technical expertise and creative problem-solving to every project — web, app, AI, or CRM.
+                    </p>
 
-                    <div class="tech-categories">
-                        <div class="tech-category animate-up">
-                            <div class="tech-cat-label"><i class="fas fa-desktop"></i> Frontend</div>
-                            <div class="tech-pills">
-                                <span class="tech-pill">React.js</span>
-                                <span class="tech-pill">Next.js</span>
-                                <span class="tech-pill">JavaScript</span>
-                                <span class="tech-pill">TypeScript</span>
-                                <span class="tech-pill">HTML5</span>
-                                <span class="tech-pill">CSS3</span>
-                                <span class="tech-pill">Tailwind</span>
+                    <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); text-align: left; gap: 1.5rem;">
+                        <div class="project-card animate-up" style="padding: 2rem; gap: 1rem;">
+                            <div class="service-icon-wrap" style="background: rgba(168, 85, 247, 0.1); color: #a855f7; width: 40px; height: 40px; font-size: 16px; margin-bottom: 0.5rem; box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);">
+                                <i class="fas fa-space-shuttle"></i>
                             </div>
+                            <h3 style="font-size: 18px; margin: 0;">Fast Delivery</h3>
+                            <p style="font-size: 14px; color: var(--text-light); line-height: 1.6; margin: 0;">I work efficiently with clear milestones. You get high-quality work delivered on time — every time.</p>
                         </div>
-                        <div class="tech-category animate-up">
-                            <div class="tech-cat-label"><i class="fas fa-server"></i> Backend</div>
-                            <div class="tech-pills">
-                                <span class="tech-pill">Node.js</span>
-                                <span class="tech-pill">Express.js</span>
-                                <span class="tech-pill">FastAPI</span>
-                                <span class="tech-pill">Flask</span>
-                                <span class="tech-pill">Python</span>
+                        <div class="project-card animate-up" style="padding: 2rem; gap: 1rem;">
+                            <div class="service-icon-wrap" style="background: rgba(20, 184, 166, 0.1); color: #14b8a6; width: 40px; height: 40px; font-size: 16px; margin-bottom: 0.5rem; box-shadow: 0 0 20px rgba(20, 184, 166, 0.2);">
+                                <i class="fas fa-code"></i>
                             </div>
+                            <h3 style="font-size: 18px; margin: 0;">Clean Code</h3>
+                            <p style="font-size: 14px; color: var(--text-light); line-height: 1.6; margin: 0;">Maintainable, scalable, and well-documented code following industry best practices and design patterns.</p>
                         </div>
-                        <div class="tech-category animate-up">
-                            <div class="tech-cat-label"><i class="fas fa-database"></i> Database &amp; Auth</div>
-                            <div class="tech-pills">
-                                <span class="tech-pill">Supabase</span>
-                                <span class="tech-pill">MongoDB</span>
-                                <span class="tech-pill">MySQL</span>
-                                <span class="tech-pill">PostgreSQL</span>
-                                <span class="tech-pill">Firebase</span>
+                        <div class="project-card animate-up" style="padding: 2rem; gap: 1rem;">
+                            <div class="service-icon-wrap" style="background: rgba(236, 72, 153, 0.1); color: #ec4899; width: 40px; height: 40px; font-size: 16px; margin-bottom: 0.5rem; box-shadow: 0 0 20px rgba(236, 72, 153, 0.2);">
+                                <i class="fas fa-palette"></i>
                             </div>
+                            <h3 style="font-size: 18px; margin: 0;">Pixel-Perfect UI</h3>
+                            <p style="font-size: 14px; color: var(--text-light); line-height: 1.6; margin: 0;">Every pixel matters. I translate designs into responsive, accessible, and beautiful user interfaces.</p>
                         </div>
-                        <div class="tech-category animate-up">
-                            <div class="tech-cat-label"><i class="fas fa-brain"></i> AI / Data</div>
-                            <div class="tech-pills">
-                                <span class="tech-pill">Machine Learning</span>
-                                <span class="tech-pill">RAG</span>
-                                <span class="tech-pill">OCR</span>
-                                <span class="tech-pill">LangChain</span>
-                                <span class="tech-pill">OpenAI API</span>
+                        <div class="project-card animate-up" style="padding: 2rem; gap: 1rem;">
+                            <div class="service-icon-wrap" style="background: rgba(34, 197, 94, 0.1); color: #22c55e; width: 40px; height: 40px; font-size: 16px; margin-bottom: 0.5rem; box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);">
+                                <i class="fas fa-shield-alt"></i>
                             </div>
+                            <h3 style="font-size: 18px; margin: 0;">Secure & Reliable</h3>
+                            <p style="font-size: 14px; color: var(--text-light); line-height: 1.6; margin: 0;">Security-first development with proper authentication, data validation, and vulnerability protection.</p>
                         </div>
-                        <div class="tech-category animate-up">
-                            <div class="tech-cat-label"><i class="fas fa-cloud"></i> Tools &amp; APIs</div>
-                            <div class="tech-pills">
-                                <span class="tech-pill">AWS</span>
-                                <span class="tech-pill">Docker</span>
-                                <span class="tech-pill">Vercel</span>
-                                <span class="tech-pill">Razorpay</span>
-                                <span class="tech-pill">Nodemailer</span>
-                                <span class="tech-pill">Git</span>
+                        <div class="project-card animate-up" style="padding: 2rem; gap: 1rem;">
+                            <div class="service-icon-wrap" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b; width: 40px; height: 40px; font-size: 16px; margin-bottom: 0.5rem; box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);">
+                                <i class="fas fa-clock"></i>
                             </div>
+                            <h3 style="font-size: 18px; margin: 0;">Always On Time</h3>
+                            <p style="font-size: 14px; color: var(--text-light); line-height: 1.6; margin: 0;">Projects are delivered within agreed timelines with proper planning and transparent communication.</p>
+                        </div>
+                        <div class="project-card animate-up" style="padding: 2rem; gap: 1rem;">
+                            <div class="service-icon-wrap" style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6; width: 40px; height: 40px; font-size: 16px; margin-bottom: 0.5rem; box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3 style="font-size: 18px; margin: 0;">Post-Launch Support</h3>
+                            <p style="font-size: 14px; color: var(--text-light); line-height: 1.6; margin: 0;">I don't disappear after delivery. I provide ongoing support, updates, and improvements.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── Tech Stack ─────────────────────────────────────── -->
+            <section id="tech-stack" class="tech-stack section-spacing" style="text-align: center;">
+                <div class="container">
+                    <div class="hero-badge animate-up" style="margin: 0 auto 1.5rem; display: inline-flex;">
+                        <i class="fas fa-cog" style="margin-right: 8px;"></i> DEVELOPMENT SKILLS
+                    </div>
+                    <h2 class="section-title animate-up" style="font-size: clamp(32px, 5vw, 42px); text-transform: none; letter-spacing: -0.5px; margin-bottom: 1rem; justify-content: center;">
+                        Full Stack Developer <span style="color: var(--primary); margin-left: 10px;">Skills & Tech Stack</span>
+                    </h2>
+                    <p class="section-desc animate-up" style="max-width: 700px; margin: 0 auto 4rem; line-height: 1.6;">
+                        A curated set of tools and technologies I use to build modern full-stack applications from web to mobile to trading bots.
+                    </p>
+
+                    <!-- Stats Row -->
+                    <div class="tech-stats-grid animate-up" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 4rem;">
+                        <div class="tech-stat-box" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; backdrop-filter: blur(10px); transition: transform 0.3s ease;">
+                            <span style="font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 0.5rem;">3+</span>
+                            <span style="font-size: 14px; color: var(--text-light); font-weight: 500;">Years Exp</span>
+                        </div>
+                        <div class="tech-stat-box" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; backdrop-filter: blur(10px); transition: transform 0.3s ease;">
+                            <span style="font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 0.5rem;">15+</span>
+                            <span style="font-size: 14px; color: var(--text-light); font-weight: 500;">Projects</span>
+                        </div>
+                        <div class="tech-stat-box" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; backdrop-filter: blur(10px); transition: transform 0.3s ease;">
+                            <span style="font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 0.5rem;">7</span>
+                            <span style="font-size: 14px; color: var(--text-light); font-weight: 500;">Industries</span>
+                        </div>
+                        <div class="tech-stat-box" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; backdrop-filter: blur(10px); transition: transform 0.3s ease;">
+                            <span style="font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 0.5rem;">100%</span>
+                            <span style="font-size: 14px; color: var(--text-light); font-weight: 500;">Commitment</span>
+                        </div>
+                    </div>
+
+                    <!-- Filter Tabs (Visual only for now) -->
+                    <div class="filter-tabs animate-up" style="margin-bottom: 3rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                        <button class="filter-btn active" style="padding: 0.5rem 1.5rem; border-radius: 30px; background: rgba(0, 240, 255, 0.15); color: #fff; border: 1px solid rgba(0, 240, 255, 0.3); font-size: 14px; font-weight: 500;">All (12)</button>
+                        <button class="filter-btn" style="padding: 0.5rem 1.5rem; border-radius: 30px; background: transparent; color: var(--text-light); border: 1px solid rgba(255, 255, 255, 0.1); font-size: 14px; font-weight: 500;">Frontend (3)</button>
+                        <button class="filter-btn" style="padding: 0.5rem 1.5rem; border-radius: 30px; background: transparent; color: var(--text-light); border: 1px solid rgba(255, 255, 255, 0.1); font-size: 14px; font-weight: 500;">Backend (4)</button>
+                        <button class="filter-btn" style="padding: 0.5rem 1.5rem; border-radius: 30px; background: transparent; color: var(--text-light); border: 1px solid rgba(255, 255, 255, 0.1); font-size: 14px; font-weight: 500;">Database (3)</button>
+                        <button class="filter-btn" style="padding: 0.5rem 1.5rem; border-radius: 30px; background: transparent; color: var(--text-light); border: 1px solid rgba(255, 255, 255, 0.1); font-size: 14px; font-weight: 500;">DevOps (2)</button>
+                    </div>
+
+                    <!-- Skills Grid -->
+                    <div class="advanced-skills-grid animate-up" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; text-align: left; margin-bottom: 4rem;">
+                        
+                        <!-- React / Next.js -->
+                        <div class="advanced-skill-card" style="position: relative; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: space-between; overflow: hidden; transition: all 0.3s ease;">
+                            <div style="display: flex; align-items: center; gap: 1rem; z-index: 2;">
+                                <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(0, 216, 255, 0.1); display: flex; align-items: center; justify-content: center; color: #00d8ff; font-size: 1.2rem;">
+                                    <i class="fab fa-react"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px 0;">React / Next.js</h4>
+                                    <span style="font-size: 12px; color: var(--text-light);">Frontend</span>
+                                </div>
+                            </div>
+                            <div style="font-size: 16px; font-weight: 800; color: #00d8ff; z-index: 2;">95%</div>
+                            <div style="position: absolute; bottom: 0; left: 0; height: 3px; background: #00d8ff; width: 95%; box-shadow: 0 0 10px rgba(0, 216, 255, 0.5);"></div>
+                        </div>
+
+                        <!-- TypeScript -->
+                        <div class="advanced-skill-card" style="position: relative; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: space-between; overflow: hidden; transition: all 0.3s ease;">
+                            <div style="display: flex; align-items: center; gap: 1rem; z-index: 2;">
+                                <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(49, 120, 198, 0.1); display: flex; align-items: center; justify-content: center; color: #3178c6; font-size: 1.2rem;">
+                                    <strong>TS</strong>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px 0;">TypeScript</h4>
+                                    <span style="font-size: 12px; color: var(--text-light);">Frontend</span>
+                                </div>
+                            </div>
+                            <div style="font-size: 16px; font-weight: 800; color: #3178c6; z-index: 2;">90%</div>
+                            <div style="position: absolute; bottom: 0; left: 0; height: 3px; background: #3178c6; width: 90%; box-shadow: 0 0 10px rgba(49, 120, 198, 0.5);"></div>
+                        </div>
+
+                        <!-- Tailwind CSS -->
+                        <div class="advanced-skill-card" style="position: relative; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: space-between; overflow: hidden; transition: all 0.3s ease;">
+                            <div style="display: flex; align-items: center; gap: 1rem; z-index: 2;">
+                                <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(56, 189, 248, 0.1); display: flex; align-items: center; justify-content: center; color: #38bdf8; font-size: 1.2rem;">
+                                    <i class="fas fa-wind"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px 0;">Tailwind CSS</h4>
+                                    <span style="font-size: 12px; color: var(--text-light);">Frontend</span>
+                                </div>
+                            </div>
+                            <div style="font-size: 16px; font-weight: 800; color: #38bdf8; z-index: 2;">95%</div>
+                            <div style="position: absolute; bottom: 0; left: 0; height: 3px; background: #38bdf8; width: 95%; box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);"></div>
+                        </div>
+
+                        <!-- Node.js / Express -->
+                        <div class="advanced-skill-card" style="position: relative; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: space-between; overflow: hidden; transition: all 0.3s ease;">
+                            <div style="display: flex; align-items: center; gap: 1rem; z-index: 2;">
+                                <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(132, 186, 100, 0.1); display: flex; align-items: center; justify-content: center; color: #84ba64; font-size: 1.2rem;">
+                                    <i class="fab fa-node-js"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px 0;">Node.js / Express</h4>
+                                    <span style="font-size: 12px; color: var(--text-light);">Backend</span>
+                                </div>
+                            </div>
+                            <div style="font-size: 16px; font-weight: 800; color: #84ba64; z-index: 2;">88%</div>
+                            <div style="position: absolute; bottom: 0; left: 0; height: 3px; background: #84ba64; width: 88%; box-shadow: 0 0 10px rgba(132, 186, 100, 0.5);"></div>
+                        </div>
+
+                        <!-- Python / FastAPI -->
+                        <div class="advanced-skill-card" style="position: relative; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: space-between; overflow: hidden; transition: all 0.3s ease;">
+                            <div style="display: flex; align-items: center; gap: 1rem; z-index: 2;">
+                                <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(255, 212, 59, 0.1); display: flex; align-items: center; justify-content: center; color: #ffd43b; font-size: 1.2rem;">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px 0;">Python / FastAPI</h4>
+                                    <span style="font-size: 12px; color: var(--text-light);">Backend</span>
+                                </div>
+                            </div>
+                            <div style="font-size: 16px; font-weight: 800; color: #ffd43b; z-index: 2;">90%</div>
+                            <div style="position: absolute; bottom: 0; left: 0; height: 3px; background: #ffd43b; width: 90%; box-shadow: 0 0 10px rgba(255, 212, 59, 0.5);"></div>
+                        </div>
+
+                        <!-- Java / Spring Boot -->
+                        <div class="advanced-skill-card" style="position: relative; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: space-between; overflow: hidden; transition: all 0.3s ease;">
+                            <div style="display: flex; align-items: center; gap: 1rem; z-index: 2;">
+                                <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(248, 152, 32, 0.1); display: flex; align-items: center; justify-content: center; color: #f89820; font-size: 1.2rem;">
+                                    <i class="fab fa-java"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px 0;">Java / Spring Boot</h4>
+                                    <span style="font-size: 12px; color: var(--text-light);">Backend</span>
+                                </div>
+                            </div>
+                            <div style="font-size: 16px; font-weight: 800; color: #f89820; z-index: 2;">85%</div>
+                            <div style="position: absolute; bottom: 0; left: 0; height: 3px; background: #f89820; width: 85%; box-shadow: 0 0 10px rgba(248, 152, 32, 0.5);"></div>
+                        </div>
+
+                        <!-- PostgreSQL -->
+                        <div class="advanced-skill-card" style="position: relative; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: space-between; overflow: hidden; transition: all 0.3s ease;">
+                            <div style="display: flex; align-items: center; gap: 1rem; z-index: 2;">
+                                <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(51, 103, 145, 0.1); display: flex; align-items: center; justify-content: center; color: #336791; font-size: 1.2rem;">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px 0;">PostgreSQL</h4>
+                                    <span style="font-size: 12px; color: var(--text-light);">Database</span>
+                                </div>
+                            </div>
+                            <div style="font-size: 16px; font-weight: 800; color: #336791; z-index: 2;">85%</div>
+                            <div style="position: absolute; bottom: 0; left: 0; height: 3px; background: #336791; width: 85%; box-shadow: 0 0 10px rgba(51, 103, 145, 0.5);"></div>
+                        </div>
+
+                        <!-- MongoDB -->
+                        <div class="advanced-skill-card" style="position: relative; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: space-between; overflow: hidden; transition: all 0.3s ease;">
+                            <div style="display: flex; align-items: center; gap: 1rem; z-index: 2;">
+                                <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(77, 179, 61, 0.1); display: flex; align-items: center; justify-content: center; color: #4db33d; font-size: 1.2rem;">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px 0;">MongoDB</h4>
+                                    <span style="font-size: 12px; color: var(--text-light);">Database</span>
+                                </div>
+                            </div>
+                            <div style="font-size: 16px; font-weight: 800; color: #4db33d; z-index: 2;">87%</div>
+                            <div style="position: absolute; bottom: 0; left: 0; height: 3px; background: #4db33d; width: 87%; box-shadow: 0 0 10px rgba(77, 179, 61, 0.5);"></div>
+                        </div>
+
+                        <!-- Redis -->
+                        <div class="advanced-skill-card" style="position: relative; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: space-between; overflow: hidden; transition: all 0.3s ease;">
+                            <div style="display: flex; align-items: center; gap: 1rem; z-index: 2;">
+                                <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(216, 44, 32, 0.1); display: flex; align-items: center; justify-content: center; color: #d82c20; font-size: 1.2rem;">
+                                    <strong style="font-family: monospace;">R</strong>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px 0;">Redis</h4>
+                                    <span style="font-size: 12px; color: var(--text-light);">Database</span>
+                                </div>
+                            </div>
+                            <div style="font-size: 16px; font-weight: 800; color: #d82c20; z-index: 2;">75%</div>
+                            <div style="position: absolute; bottom: 0; left: 0; height: 3px; background: #d82c20; width: 75%; box-shadow: 0 0 10px rgba(216, 44, 32, 0.5);"></div>
+                        </div>
+
+                        <!-- Machine Learning / RAG -->
+                        <div class="advanced-skill-card" style="position: relative; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: space-between; overflow: hidden; transition: all 0.3s ease;">
+                            <div style="display: flex; align-items: center; gap: 1rem; z-index: 2;">
+                                <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(236, 72, 153, 0.1); display: flex; align-items: center; justify-content: center; color: #ec4899; font-size: 1.2rem;">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px 0;">Machine Learning / RAG</h4>
+                                    <span style="font-size: 12px; color: var(--text-light);">AI / Data</span>
+                                </div>
+                            </div>
+                            <div style="font-size: 16px; font-weight: 800; color: #ec4899; z-index: 2;">80%</div>
+                            <div style="position: absolute; bottom: 0; left: 0; height: 3px; background: #ec4899; width: 80%; box-shadow: 0 0 10px rgba(236, 72, 153, 0.5);"></div>
+                        </div>
+
+                        <!-- Docker / CI/CD -->
+                        <div class="advanced-skill-card" style="position: relative; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: space-between; overflow: hidden; transition: all 0.3s ease;">
+                            <div style="display: flex; align-items: center; gap: 1rem; z-index: 2;">
+                                <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(36, 150, 237, 0.1); display: flex; align-items: center; justify-content: center; color: #2496ed; font-size: 1.2rem;">
+                                    <i class="fab fa-docker"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px 0;">Docker / CI/CD</h4>
+                                    <span style="font-size: 12px; color: var(--text-light);">DevOps</span>
+                                </div>
+                            </div>
+                            <div style="font-size: 16px; font-weight: 800; color: #2496ed; z-index: 2;">72%</div>
+                            <div style="position: absolute; bottom: 0; left: 0; height: 3px; background: #2496ed; width: 72%; box-shadow: 0 0 10px rgba(36, 150, 237, 0.5);"></div>
+                        </div>
+
+                        <!-- AWS / Cloud Run -->
+                        <div class="advanced-skill-card" style="position: relative; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; justify-content: space-between; overflow: hidden; transition: all 0.3s ease;">
+                            <div style="display: flex; align-items: center; gap: 1rem; z-index: 2;">
+                                <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(255, 153, 0, 0.1); display: flex; align-items: center; justify-content: center; color: #ff9900; font-size: 1.2rem;">
+                                    <i class="fab fa-aws"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px 0;">AWS / Cloud Run</h4>
+                                    <span style="font-size: 12px; color: var(--text-light);">DevOps</span>
+                                </div>
+                            </div>
+                            <div style="font-size: 16px; font-weight: 800; color: #ff9900; z-index: 2;">80%</div>
+                            <div style="position: absolute; bottom: 0; left: 0; height: 3px; background: #ff9900; width: 80%; box-shadow: 0 0 10px rgba(255, 153, 0, 0.5);"></div>
+                        </div>
+                    </div>
+
+                    <!-- Full Tech Stack Container -->
+                    <div class="full-stack-container animate-up" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 2.5rem; text-align: left; position: relative; margin-top: 2rem;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 2rem;">
+                            <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 10px var(--primary);"></span>
+                            <span style="font-size: 14px; font-weight: 600; letter-spacing: 2px; color: var(--text-light); text-transform: uppercase;">FULL TECH STACK</span>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                            <span class="full-tech-pill" style="border: 1px solid rgba(97,218,251,0.3); color: #61dafb; padding: 0.5rem 1.2rem; border-radius: 30px; background: rgba(97,218,251,0.05); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;"><i class="fab fa-react"></i> React</span>
+                            <span class="full-tech-pill" style="border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 0.5rem 1.2rem; border-radius: 30px; background: rgba(255,255,255,0.05); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;">Next.js</span>
+                            <span class="full-tech-pill" style="border: 1px solid rgba(49,120,198,0.3); color: #3178c6; padding: 0.5rem 1.2rem; border-radius: 30px; background: rgba(49,120,198,0.05); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;">TypeScript</span>
+                            <span class="full-tech-pill" style="border: 1px solid rgba(132,186,100,0.3); color: #84ba64; padding: 0.5rem 1.2rem; border-radius: 30px; background: rgba(132,186,100,0.05); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;"><i class="fab fa-node-js"></i> Node.js</span>
+                            <span class="full-tech-pill" style="border: 1px solid rgba(248,152,32,0.3); color: #f89820; padding: 0.5rem 1.2rem; border-radius: 30px; background: rgba(248,152,32,0.05); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;"><i class="fab fa-java"></i> Spring Boot</span>
+                            <span class="full-tech-pill" style="border: 1px solid rgba(255,212,59,0.3); color: #ffd43b; padding: 0.5rem 1.2rem; border-radius: 30px; background: rgba(255,212,59,0.05); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;"><i class="fab fa-python"></i> Python</span>
+                            <span class="full-tech-pill" style="border: 1px solid rgba(0,150,136,0.3); color: #009688; padding: 0.5rem 1.2rem; border-radius: 30px; background: rgba(0,150,136,0.05); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;">FastAPI</span>
+                            <span class="full-tech-pill" style="border: 1px solid rgba(77,179,61,0.3); color: #4db33d; padding: 0.5rem 1.2rem; border-radius: 30px; background: rgba(77,179,61,0.05); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-leaf"></i> MongoDB</span>
+                            <span class="full-tech-pill" style="border: 1px solid rgba(51,103,145,0.3); color: #336791; padding: 0.5rem 1.2rem; border-radius: 30px; background: rgba(51,103,145,0.05); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-database"></i> PostgreSQL</span>
+                            <span class="full-tech-pill" style="border: 1px solid rgba(216,44,32,0.3); color: #d82c20; padding: 0.5rem 1.2rem; border-radius: 30px; background: rgba(216,44,32,0.05); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;">Redis</span>
+                            <span class="full-tech-pill" style="border: 1px solid rgba(36,150,237,0.3); color: #2496ed; padding: 0.5rem 1.2rem; border-radius: 30px; background: rgba(36,150,237,0.05); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;"><i class="fab fa-docker"></i> Docker</span>
+                            <span class="full-tech-pill" style="border: 1px solid rgba(56,189,248,0.3); color: #38bdf8; padding: 0.5rem 1.2rem; border-radius: 30px; background: rgba(56,189,248,0.05); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-wind"></i> Tailwind</span>
+                            <span class="full-tech-pill" style="border: 1px solid rgba(13,40,115,0.3); color: #8ba2e6; padding: 0.5rem 1.2rem; border-radius: 30px; background: rgba(13,40,115,0.05); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;">Razorpay</span>
+                            <span class="full-tech-pill" style="border: 1px solid rgba(229,57,53,0.3); color: #e53935; padding: 0.5rem 1.2rem; border-radius: 30px; background: rgba(229,57,53,0.05); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;">Socket.io</span>
+                            <span class="full-tech-pill" style="border: 1px solid rgba(90,103,216,0.3); color: #a3bffa; padding: 0.5rem 1.2rem; border-radius: 30px; background: rgba(90,103,216,0.05); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;">Prisma</span>
+                            <span class="full-tech-pill" style="border: 1px solid rgba(225,0,152,0.3); color: #e10098; padding: 0.5rem 1.2rem; border-radius: 30px; background: rgba(225,0,152,0.05); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;">GraphQL</span>
+                            <span class="full-tech-pill" style="border: 1px solid rgba(255,153,0,0.3); color: #ff9900; padding: 0.5rem 1.2rem; border-radius: 30px; background: rgba(255,153,0,0.05); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;"><i class="fab fa-aws"></i> AWS</span>
+                            <span class="full-tech-pill" style="border: 1px solid rgba(241,80,47,0.3); color: #f1502f; padding: 0.5rem 1.2rem; border-radius: 30px; background: rgba(241,80,47,0.05); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;"><i class="fab fa-git-alt"></i> Git</span>
+                            <span class="full-tech-pill" style="border: 1px solid rgba(242,78,30,0.3); color: #f24e1e; padding: 0.5rem 1.2rem; border-radius: 30px; background: rgba(242,78,30,0.05); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;"><i class="fab fa-figma"></i> Figma</span>
+                            <span class="full-tech-pill" style="border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 0.5rem 1.2rem; border-radius: 30px; background: rgba(255,255,255,0.05); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px;">Vercel</span>
                         </div>
                     </div>
                 </div>
@@ -290,18 +581,53 @@
                     <p class="section-desc animate-up">Real business problems solved with high-performance code and
                         architecture.</p>
 
-                    <!-- Featured project card -->
-                    <div class="featured-project animate-up">
+                    <!-- Filter Tabs -->
+                    <div class="filter-tabs animate-up">
+                        <button class="filter-btn active" data-filter="all">All Projects</button>
+                        <button class="filter-btn" data-filter="business">Business &amp; Web</button>
+                        <button class="filter-btn" data-filter="ai">AI &amp; Automation</button>
+                    </div>
+
+                    <!-- Featured project cards -->
+                    <div class="featured-project animate-up" data-filter="ai">
                         <div class="featured-label">★ Featured Case Study</div>
+                        <div class="featured-inner">
+                            <div class="featured-text">
+                                <h3>ASKVIT (Production-Grade Academic ERP)</h3>
+                                <div class="case-study-sm" style="margin-bottom: 1.5rem;">
+                                    <p><strong>Problem:</strong> Institutions rely on outdated platforms, leading to administrative bottlenecks and student frustration with repetitive workflows.</p>
+                                    <p><strong>Audience:</strong> Universities, educational institutions, students, and faculty members.</p>
+                                    <p><strong>Value:</strong> A unified platform featuring role-based dashboards, automated slot-based timetables, and an OpenAI-powered RAG chatbot that automates 80% of level-1 queries.</p>
+                                </div>
+                                <div class="project-tags">
+                                    <span class="tag">Next.js</span>
+                                    <span class="tag">FastAPI</span>
+                                    <span class="tag">PostgreSQL</span>
+                                    <span class="tag">pgvector</span>
+                                    <span class="tag">OpenAI</span>
+                                </div>
+                                <div class="project-card-links" style="margin-top:1.2rem; display: flex; align-items: center; gap: 1rem;">
+                                    <button onclick="openCaseStudy('modal-askvit')" class="magnetic-btn primary-btn" style="padding: 0.6rem 1.2rem; font-size: 14px; margin: 0; background: var(--primary); color: #000; font-weight: 600; border: none; cursor: pointer; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 240, 255, 0.2);">View Case Study</button>
+                                    <a href="https://github.com/akshatd1007/vtop-mvp" target="_blank" class="project-link" style="margin: 0;"><i class="fab fa-github"></i> GitHub</a>
+                                </div>
+                            </div>
+                            <div class="featured-stats">
+                                <div class="f-stat"><span>3</span><small>Distinct Portals</small></div>
+                                <div class="f-stat"><span>30+</span><small>AI Chat Tools</small></div>
+                                <div class="f-stat"><span>RAG</span><small>Vector Search</small></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="featured-project animate-up" data-filter="ai" style="margin-top: 3rem;">
+                        <div class="featured-label" style="color: var(--primary);">★ Featured AI Product</div>
                         <div class="featured-inner">
                             <div class="featured-text">
                                 <h3>BharatFin – AI Financial Assistant</h3>
                                 <div class="case-study-sm" style="margin-bottom: 1.5rem;">
-                                    <p><strong>Problem:</strong> Retail investors struggle to analyze complex portfolios
-                                        and ingest market data quickly.</p>
+                                    <p><strong>Problem:</strong> Retail investors struggle to analyze complex portfolios and ingest market data quickly.</p>
                                     <p><strong>Audience:</strong> Retail investors and personal finance enthusiasts.</p>
-                                    <p><strong>Value:</strong> Reduces portfolio analysis time by 90%, improving
-                                        decision-making accuracy and securely processing documents instantly.</p>
+                                    <p><strong>Value:</strong> Reduces portfolio analysis time by 90%, improving decision-making accuracy and securely processing documents instantly.</p>
                                 </div>
                                 <div class="project-tags">
                                     <span class="tag">Python</span>
@@ -310,75 +636,95 @@
                                     <span class="tag">OCR</span>
                                     <span class="tag">Next.js</span>
                                 </div>
+                                <div class="project-card-links" style="margin-top:1.2rem; display: flex; align-items: center; gap: 1rem;">
+                                    <button onclick="openCaseStudy('modal-bharatfin')" class="magnetic-btn primary-btn" style="padding: 0.6rem 1.2rem; font-size: 14px; margin: 0; background: var(--primary); color: #000; font-weight: 600; border: none; cursor: pointer; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 240, 255, 0.2);">View Case Study</button>
+                                    <a href="https://github.com/akshatd1007" target="_blank" class="project-link" style="margin: 0;"><i class="fab fa-github"></i> GitHub</a>
+                                </div>
                             </div>
                             <div class="featured-stats">
                                 <div class="f-stat"><span>10x</span><small>Faster Insights</small></div>
-                                <div class="f-stat"><span>RAG</span><small>Architeture</small></div>
+                                <div class="f-stat"><span>RAG</span><small>Architecture</small></div>
                                 <div class="f-stat"><span>RT</span><small>Market Data</small></div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Business & E-commerce grid -->
-                    <h3 class="projects-sub-heading animate-up" style="margin-top: 4rem;">🌐 Business &amp; E-commerce
-                    </h3>
+                    <h3 class="projects-sub-heading animate-up" style="margin-top: 4rem;">🌐 Business &amp; E-commerce</h3>
                     <div class="project-cards-grid">
-                        <div class="project-card animate-up">
+                        <div class="project-card animate-up" data-filter="business">
+                            <div class="project-card-header">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="project-status" style="background: rgba(255, 193, 7, 0.1); color: #ffc107; border-color: rgba(255, 193, 7, 0.3);">Ongoing</div>
+                            </div>
+                            <h4 style="margin-bottom:0.8rem;">Buddy (Hyperlocal Campus Platform)</h4>
+                            <div class="case-study-sm">
+                                <p><strong>Problem:</strong> Students lack a unified platform for hyperlocal campus interactions, marketplace needs, and real-time community engagement.</p>
+                                <p><strong>Audience:</strong> University students and campus communities.</p>
+                                <p><strong>Value:</strong> A scalable full-stack platform enabling secure, real-time campus networking and services.</p>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">Socket.io</span><span class="tag">PostgreSQL</span><span class="tag">Prisma</span>
+                            </div>
+                            <div class="project-card-links">
+                                <a href="https://github.com/akshatd1007/Buddy" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-card animate-up" data-filter="business">
                             <div class="project-card-header">
                                 <i class="fas fa-building"></i>
                                 <div class="project-status live">Live</div>
                             </div>
                             <h4 style="margin-bottom:0.8rem;">Amitabh Overseas</h4>
                             <div class="case-study-sm">
-                                <p><strong>Problem:</strong> Outdated online presence limiting global B2B trade
-                                    inquiries.</p>
-                                <p><strong>Audience:</strong> Global B2B suppliers and international trade companies.
-                                </p>
-                                <p><strong>Value:</strong> Delivers a 3x increase in load speed and drives higher
-                                    organic lead generation, expanding international reach.</p>
+                                <p><strong>Problem:</strong> Outdated online presence limiting global B2B trade inquiries.</p>
+                                <p><strong>Audience:</strong> Global B2B suppliers and international trade companies.</p>
+                                <p><strong>Value:</strong> Delivers a 3x increase in load speed and drives higher organic lead generation, expanding international reach.</p>
                             </div>
                             <div class="project-tags">
-                                <span class="tag">Next.js</span><span class="tag">TypeScript</span><span
-                                    class="tag">Tailwind</span><span class="tag">Supabase</span><span
-                                    class="tag">Razorpay</span>
+                                <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Tailwind</span><span class="tag">Supabase</span><span class="tag">Razorpay</span>
+                            </div>
+                            <div class="project-card-links">
+                                <a href="https://amitabhoverseas.com" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                                <a href="https://github.com/akshatd1007" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                             </div>
                         </div>
 
-                        <div class="project-card animate-up">
+                        <div class="project-card animate-up" data-filter="business">
                             <div class="project-card-header">
                                 <i class="fas fa-coins"></i>
                                 <div class="project-status live">Live</div>
                             </div>
                             <h4 style="margin-bottom:0.8rem;">Bangalore Crypto Firm</h4>
                             <div class="case-study-sm">
-                                <p><strong>Problem:</strong> Traders needed a secure, zero-latency platform to view live
-                                    crypto data feeds.</p>
+                                <p><strong>Problem:</strong> Traders needed a secure, zero-latency platform to view live crypto data feeds.</p>
                                 <p><strong>Audience:</strong> Crypto traders and financial institutions.</p>
-                                <p><strong>Value:</strong> Provides zero-delay live data metrics, driving higher user
-                                    retention and increasing trading confidence.</p>
+                                <p><strong>Value:</strong> Provides zero-delay live data metrics, driving higher user retention and increasing trading confidence.</p>
                             </div>
                             <div class="project-tags">
-                                <span class="tag">React</span><span class="tag">Node.js</span><span
-                                    class="tag">WebSockets</span>
+                                <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">WebSockets</span>
+                            </div>
+                            <div class="project-card-links">
+                                <a href="https://github.com/akshatd1007" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                             </div>
                         </div>
 
-                        <div class="project-card animate-up">
+                        <div class="project-card animate-up" data-filter="business">
                             <div class="project-card-header">
                                 <i class="fas fa-graduation-cap"></i>
                                 <div class="project-status live">Live</div>
                             </div>
                             <h4 style="margin-bottom:0.8rem;">Educational Platform</h4>
                             <div class="case-study-sm">
-                                <p><strong>Problem:</strong> Coaching centers struggle with manual student records and
-                                    online test management.</p>
+                                <p><strong>Problem:</strong> Coaching centers struggle with manual student records and online test management.</p>
                                 <p><strong>Audience:</strong> Local educational institutes and coaching centers.</p>
-                                <p><strong>Value:</strong> Digitalizes 100% of workflows through automated test grading,
-                                    significantly reducing administrative errors.</p>
+                                <p><strong>Value:</strong> Digitalizes 100% of workflows through automated test grading, significantly reducing administrative errors.</p>
                             </div>
                             <div class="project-tags">
-                                <span class="tag">Next.js</span><span class="tag">MongoDB</span><span
-                                    class="tag">Auth</span>
+                                <span class="tag">Next.js</span><span class="tag">MongoDB</span><span class="tag">Auth</span>
+                            </div>
+                            <div class="project-card-links">
+                                <a href="https://github.com/akshatd1007" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                             </div>
                         </div>
                     </div>
@@ -386,40 +732,23 @@
                     <!-- AI & Automation grid -->
                     <h3 class="projects-sub-heading animate-up" style="margin-top: 4rem;">🤖 AI &amp; Automation</h3>
                     <div class="project-cards-grid">
-                        <div class="project-card animate-up">
-                            <div class="project-card-header">
-                                <i class="fas fa-robot"></i>
-                                <div class="project-status ai-tag">AI Impact</div>
-                            </div>
-                            <h4 style="margin-bottom:0.8rem;">ERP Chatbot (VIT)</h4>
-                            <div class="case-study-sm">
-                                <p><strong>Problem:</strong> Admin teams get overwhelmed by repetitive student queries
-                                    about workflows.</p>
-                                <p><strong>Audience:</strong> Universities and large educational institutions.</p>
-                                <p><strong>Value:</strong> Automates 80% of level-1 queries, drastically reducing
-                                    administrative workload and providing instant answers.</p>
-                            </div>
-                            <div class="project-tags">
-                                <span class="tag">Python</span><span class="tag">NLP</span><span
-                                    class="tag">FastAPI</span>
-                            </div>
-                        </div>
-                        <div class="project-card animate-up">
+
+                        <div class="project-card animate-up" data-filter="ai">
                             <div class="project-card-header">
                                 <i class="fas fa-comments"></i>
                                 <div class="project-status ai-tag">AI Impact</div>
                             </div>
                             <h4 style="margin-bottom:0.8rem;">Custom AI Chatbots</h4>
                             <div class="case-study-sm">
-                                <p><strong>Problem:</strong> Businesses need 24/7 client engagement without increasing
-                                    support staff costs.</p>
+                                <p><strong>Problem:</strong> Businesses need 24/7 client engagement without increasing support staff costs.</p>
                                 <p><strong>Audience:</strong> Customer-facing businesses and service providers.</p>
-                                <p><strong>Value:</strong> Automates 60%+ of initial client interactions, improving lead
-                                    qualification speed with high accuracy.</p>
+                                <p><strong>Value:</strong> Automates 60%+ of initial client interactions, improving lead qualification speed with high accuracy.</p>
                             </div>
                             <div class="project-tags">
-                                <span class="tag">LangChain</span><span class="tag">OpenAI</span><span
-                                    class="tag">Vector DB</span>
+                                <span class="tag">LangChain</span><span class="tag">OpenAI</span><span class="tag">Vector DB</span>
+                            </div>
+                            <div class="project-card-links">
+                                <a href="https://github.com/akshatd1007" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                             </div>
                         </div>
                     </div>
@@ -433,45 +762,11 @@
                 </div>
             </section>
 
-            <!-- ── Why Work With Me (Trust) ──────────────────────── -->
-            <section id="why-me" class="why-me section-spacing">
-                <div class="container">
-                    <div class="split-layout">
-                        <div class="split-col animate-up">
-                            <h2 class="section-title">04. WHY WORK WITH ME</h2>
-                            <p class="section-desc">I don't just write code. I build technical foundations for scalable
-                                businesses.</p>
-                            <ul class="feature-list mt-2">
-                                <li><strong>Fast Delivery:</strong> Skip agency bureaucracy. I ship MVPs in weeks, not
-                                    months.</li>
-                                <li><strong>Clean, Scalable Code:</strong> Built on robust stacks, ready to scale from
-                                    day 1.</li>
-                                <li><strong>Strong Backend Expertise:</strong> Not just pretty frontends—I build secure
-                                    databases &amp; APIs.</li>
-                                <li><strong>Full Startup Partnership:</strong> I act as your technical co-founder, not
-                                    just a coder.</li>
-                            </ul>
-                        </div>
-                        <div class="split-col animate-up">
-                            <h2 class="section-title">THE ACCELERATOR</h2>
-                            <div class="offer-box">
-                                <h3>Get Your MVP Built in 14 Days</h3>
-                                <p>Stop waiting to launch. I specialize in rapid MVP development for startups looking to
-                                    validate ideas and secure initial users quickly.</p>
-                                <ul class="feature-list highlight mt-2">
-                                    <li>⚡ Core features mapped out</li>
-                                    <li>⚡ User-ready deployment</li>
-                                    <li>⚡ 14-day turnaround</li>
-                                </ul>
-                                <a href="#contact" class="magnetic-btn primary-btn mt-3"
-                                    style="background: var(--primary); color: #000; width: 100%; justify-content: center;">
-                                    Start Your MVP Project
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </section>
+
+
 
             <!-- ── Trust / Proof ─────────────────────────────────────── -->
             <section id="proof" class="proof-section" style="padding: 2rem 0 6rem 0;">
@@ -512,25 +807,122 @@
 
             <!-- ── Contact ────────────────────────────────────────── -->
             <section id="contact" class="contact section-spacing">
-                <div class="container text-center contact-container">
-                    <h2 class="section-title animate-up">05. QUICK START</h2>
-                    <h2 class="huge-text animate-up" style="font-size: clamp(36px, 5vw, 64px);">TELL ME ABOUT<br>YOUR
-                        IDEA.</h2>
-                    <p class="contact-sub animate-up mt-2" style="font-size: 18px;">I reply within 24 hours.</p>
-                    <div class="contact-links mt-3 animate-up" style="justify-content: center;">
-                        <a href="mailto:akshatdubey1967@gmail.com" class="magnetic-btn primary-btn"
-                            style="background: var(--primary); color: #000; padding: 1.5rem 3rem; font-size: 16px;">
-                            <i class="fas fa-envelope"></i> Email Me Directly
-                        </a>
+                <div class="container contact-container" style="max-width: 1200px;">
+                    <div style="text-align: center; margin-bottom: 4rem;">
+                        <div class="hero-badge animate-up" style="margin: 0 auto 1.5rem; display: inline-flex;">
+                            <i class="fas fa-envelope" style="margin-right: 8px;"></i> GET IN TOUCH
+                        </div>
+                        <h2 class="section-title animate-up" style="font-size: clamp(36px, 5vw, 48px); text-transform: none; letter-spacing: -0.5px; justify-content: center; margin-bottom: 1rem;">
+                            Let's Work <span style="color: var(--primary); margin-left: 10px;">Together</span>
+                        </h2>
+                        <div style="width: 60px; height: 3px; background: linear-gradient(90deg, #8b5cf6, var(--primary)); margin: 0 auto 1.5rem;"></div>
+                        <p class="section-desc animate-up" style="max-width: 600px; margin: 0 auto;">
+                            Have a project in mind? I'd love to hear about it. Send me a message and I'll respond within 24 hours.
+                        </p>
                     </div>
-                    <div class="contact-links mt-2 animate-up" style="justify-content: center;">
-                        <a href="tel:+917042869593" class="magnetic-btn secondary-btn">
-                            <i class="fas fa-phone"></i> +91 7042869593
-                        </a>
-                        <a href="https://www.linkedin.com/in/Akshat-Dubey10" target="_blank"
-                            class="magnetic-btn secondary-btn">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
+
+                    <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: stretch;">
+                        
+                        <!-- Left Column: Info -->
+                        <div class="contact-info-col animate-up" style="display: flex; flex-direction: column; gap: 2rem; text-align: left;">
+                            <div>
+                                <h3 style="font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Contact Information</h3>
+                                <p style="color: var(--text-light); font-size: 15px; line-height: 1.6;">Feel free to reach out through any channel. I'm always open to discussing new projects and opportunities.</p>
+                            </div>
+
+                            <div class="contact-cards" style="display: flex; flex-direction: column; gap: 1rem;">
+                                <!-- Email -->
+                                <div class="contact-info-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; transition: background 0.3s;">
+                                    <div style="width: 48px; height: 48px; border-radius: 10px; background: rgba(139, 92, 246, 0.1); display: flex; align-items: center; justify-content: center; color: #8b5cf6; font-size: 1.2rem; flex-shrink: 0;">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 12px; font-weight: 700; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px;">Email</div>
+                                        <a href="mailto:akshatdubey1967@gmail.com" style="font-size: 16px; color: #fff; font-weight: 500; text-decoration: none;">akshatdubey1967@gmail.com</a>
+                                    </div>
+                                </div>
+                                
+                                <!-- WhatsApp -->
+                                <div class="contact-info-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; transition: background 0.3s;">
+                                    <div style="width: 48px; height: 48px; border-radius: 10px; background: rgba(34, 197, 94, 0.1); display: flex; align-items: center; justify-content: center; color: #22c55e; font-size: 1.2rem; flex-shrink: 0;">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 12px; font-weight: 700; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px;">WhatsApp</div>
+                                        <a href="https://wa.me/917042869593" target="_blank" style="font-size: 16px; color: #fff; font-weight: 500; text-decoration: none;">+91 7042869593</a>
+                                    </div>
+                                </div>
+
+                                <!-- Location -->
+                                <div class="contact-info-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; transition: background 0.3s;">
+                                    <div style="width: 48px; height: 48px; border-radius: 10px; background: rgba(236, 72, 153, 0.1); display: flex; align-items: center; justify-content: center; color: #ec4899; font-size: 1.2rem; flex-shrink: 0;">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 12px; font-weight: 700; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px;">Location</div>
+                                        <div style="font-size: 16px; color: #fff; font-weight: 500;">New Delhi, India</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 1rem;">
+                                <div style="font-size: 12px; font-weight: 700; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem;">Find me on</div>
+                                <div style="display: flex; gap: 1rem;">
+                                    <a href="https://github.com/akshatd1007" target="_blank" class="social-circle-link" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: center; color: #fff; transition: all 0.3s ease; text-decoration: none;"><i class="fab fa-github"></i></a>
+                                    <a href="https://www.linkedin.com/in/Akshat-Dubey10" target="_blank" class="social-circle-link" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: center; color: #0077b5; transition: all 0.3s ease; text-decoration: none;"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="https://wa.me/917042869593" target="_blank" class="social-circle-link" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: center; color: #25d366; transition: all 0.3s ease; text-decoration: none;"><i class="fab fa-whatsapp"></i></a>
+                                    <a href="mailto:akshatdubey1967@gmail.com" class="social-circle-link" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: center; color: #8b5cf6; transition: all 0.3s ease; text-decoration: none;"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: auto;">
+                                <div class="status-badge" style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); padding: 0.8rem 1.2rem; border-radius: 8px; display: inline-flex; align-items: center; gap: 8px;">
+                                    <span style="width: 8px; height: 8px; background: #10b981; border-radius: 50%; box-shadow: 0 0 10px #10b981;"></span>
+                                    <span style="color: #10b981; font-size: 14px; font-weight: 600;">Available for freelance & full-time</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Form -->
+                        <div class="contact-form-col animate-up" style="text-align: left;">
+                            <form id="premium-contact-form" class="premium-form-box" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; backdrop-filter: blur(10px);">
+                                <h3 style="font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Send a Message</h3>
+                                
+                                <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                                    <div class="form-group">
+                                        <label style="display: block; font-size: 13px; font-weight: 600; color: var(--text-light); margin-bottom: 8px;">Your Name *</label>
+                                        <input type="text" required placeholder="John Doe" style="width: 100%; background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px 16px; color: #fff; font-family: inherit; font-size: 15px; outline: none; transition: border-color 0.3s;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="display: block; font-size: 13px; font-weight: 600; color: var(--text-light); margin-bottom: 8px;">Email Address *</label>
+                                        <input type="email" required placeholder="john@example.com" style="width: 100%; background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px 16px; color: #fff; font-family: inherit; font-size: 15px; outline: none; transition: border-color 0.3s;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label style="display: block; font-size: 13px; font-weight: 600; color: var(--text-light); margin-bottom: 8px;">Subject *</label>
+                                    <div style="position: relative;">
+                                        <select required style="width: 100%; background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px 16px; color: var(--text-light); font-family: inherit; font-size: 15px; outline: none; transition: border-color 0.3s; appearance: none; cursor: pointer;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+                                            <option value="" disabled selected>Select a subject</option>
+                                            <option value="freelance">Freelance Project</option>
+                                            <option value="fulltime">Full-time Opportunity</option>
+                                            <option value="consulting">Consulting / Advice</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <i class="fas fa-chevron-down" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--text-light); pointer-events: none; font-size: 12px;"></i>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label style="display: block; font-size: 13px; font-weight: 600; color: var(--text-light); margin-bottom: 8px;">Message *</label>
+                                    <textarea required rows="5" placeholder="Tell me about your project or opportunity..." style="width: 100%; background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px 16px; color: #fff; font-family: inherit; font-size: 15px; outline: none; transition: border-color 0.3s; resize: vertical;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"></textarea>
+                                </div>
+
+                                <button type="submit" class="premium-submit-btn" style="width: 100%; background: linear-gradient(90deg, #8b5cf6, var(--primary)); border: none; border-radius: 8px; padding: 14px; color: #fff; font-weight: 600; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: opacity 0.3s; margin-top: 0.5rem; box-shadow: 0 4px 15px rgba(0, 240, 255, 0.3);" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                                    <i class="fas fa-paper-plane"></i> Send Message
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -563,6 +955,82 @@
                 </div>
             </footer>
 
+        </div>
+    </div>
+    <!-- ── Case Study Modals ────────────────────────────────────── -->
+    <!-- ASKVIT Modal -->
+    <div id="modal-askvit" class="case-study-modal" onclick="if(event.target === this) closeCaseStudy('modal-askvit')">
+        <div class="case-study-panel" data-lenis-prevent="true">
+            <button class="case-study-close" onclick="closeCaseStudy('modal-askvit')"><i class="fas fa-times"></i></button>
+            <div class="case-study-header">
+                <h2>ASKVIT (Production-Grade Academic ERP)</h2>
+                <div class="case-study-tags">
+                    <span class="tag">Next.js</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">pgvector</span><span class="tag">OpenAI</span>
+                </div>
+            </div>
+            <div class="case-study-content">
+                <div class="cs-section">
+                    <h3><i class="fas fa-eye" style="color: var(--primary); margin-right: 8px;"></i> Overview</h3>
+                    <p>An enterprise-grade academic ERP built to unify student portals and automate faculty workflows. The project consolidated three fragmented legacy systems into a single, high-performance dashboard.</p>
+                </div>
+                <div class="cs-section">
+                    <h3><i class="fas fa-server" style="color: var(--primary); margin-right: 8px;"></i> Architecture</h3>
+                    <p>The frontend leverages <strong>Next.js</strong> for server-side rendering and rapid interactions, while the backend relies on <strong>FastAPI</strong> for high-throughput, asynchronous API routes. A <strong>PostgreSQL</strong> database with <strong>pgvector</strong> was implemented to support complex relational queries alongside vector embeddings.</p>
+                </div>
+                <div class="cs-section">
+                    <h3><i class="fas fa-bolt" style="color: var(--primary); margin-right: 8px;"></i> Key Features</h3>
+                    <ul>
+                        <li><strong>Role-based Access Control:</strong> Distinct portals for Students, Administrators, and Faculty with strict permission gating.</li>
+                        <li><strong>Automated Timetable Generation:</strong> An algorithmic slot-based scheduler that prevents resource conflicts.</li>
+                        <li><strong>Level-1 Query Automation:</strong> An embedded RAG chatbot powered by OpenAI that answers student queries regarding schedules, grades, and policies instantly.</li>
+                    </ul>
+                </div>
+                <div class="cs-section">
+                    <h3><i class="fas fa-chart-line" style="color: var(--primary); margin-right: 8px;"></i> Impact & Metrics</h3>
+                    <p>The integration of the RAG chatbot automated <strong>80% of repetitive academic queries</strong>, significantly reducing administrative burden. The unified dashboard improved user retention and decreased average task completion time by 60%.</p>
+                </div>
+                <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+                    <a href="https://github.com/akshatd1007/vtop-mvp" target="_blank" class="magnetic-btn primary-btn" style="background: var(--primary); color: #000; text-decoration: none; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 600;"><i class="fab fa-github"></i> View Source Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BharatFin Modal -->
+    <div id="modal-bharatfin" class="case-study-modal" onclick="if(event.target === this) closeCaseStudy('modal-bharatfin')">
+        <div class="case-study-panel" data-lenis-prevent="true">
+            <button class="case-study-close" onclick="closeCaseStudy('modal-bharatfin')"><i class="fas fa-times"></i></button>
+            <div class="case-study-header">
+                <h2>BharatFin – AI Financial Assistant</h2>
+                <div class="case-study-tags">
+                    <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">LangChain</span><span class="tag">OCR</span><span class="tag">Next.js</span>
+                </div>
+            </div>
+            <div class="case-study-content">
+                <div class="cs-section">
+                    <h3><i class="fas fa-eye" style="color: var(--primary); margin-right: 8px;"></i> Overview</h3>
+                    <p>An AI-powered financial assistant designed to democratize portfolio analysis for retail investors, converting complex financial data into conversational insights.</p>
+                </div>
+                <div class="cs-section">
+                    <h3><i class="fas fa-server" style="color: var(--primary); margin-right: 8px;"></i> Architecture</h3>
+                    <p>The core intelligence is powered by <strong>Python</strong> and <strong>LangChain</strong>, exposed via a lightning-fast <strong>FastAPI</strong> backend. The frontend is built with <strong>Next.js</strong> to ensure a responsive, app-like user experience. Real-time market data is ingested and cached for zero-delay retrieval.</p>
+                </div>
+                <div class="cs-section">
+                    <h3><i class="fas fa-bolt" style="color: var(--primary); margin-right: 8px;"></i> Key Features</h3>
+                    <ul>
+                        <li><strong>Real-time Market Data Ingestion:</strong> Continuous syncing with financial APIs to ensure data accuracy.</li>
+                        <li><strong>Automated Document Parsing:</strong> An advanced OCR engine that instantly extracts key metrics from uploaded financial statements and PDFs.</li>
+                        <li><strong>Conversational Portfolio Insights:</strong> Users can query their portfolios using natural language, receiving tailored advice and risk assessments.</li>
+                    </ul>
+                </div>
+                <div class="cs-section">
+                    <h3><i class="fas fa-chart-line" style="color: var(--primary); margin-right: 8px;"></i> Impact & Metrics</h3>
+                    <p>The platform <strong>reduces complex portfolio analysis time by 90%</strong> compared to manual spreadsheet tracking. The OCR processing pipeline extracts data securely with near-instant turnaround times, dramatically improving decision-making speed for users.</p>
+                </div>
+                <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+                    <a href="https://github.com/akshatd1007" target="_blank" class="magnetic-btn primary-btn" style="background: var(--primary); color: #000; text-decoration: none; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 600;"><i class="fab fa-github"></i> View Source Code</a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -603,9 +1071,41 @@
             }, 300);
         }
 
+        function openCaseStudy(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            requestAnimationFrame(() => {
+                const panel = modal.querySelector('.case-study-panel');
+                if (panel) {
+                    panel.style.transform = 'translateY(0) scale(1)';
+                    panel.style.opacity = '1';
+                }
+            });
+        }
+
+        function closeCaseStudy(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            const panel = modal.querySelector('.case-study-panel');
+            if (panel) {
+                panel.style.transform = 'translateY(30px) scale(0.97)';
+                panel.style.opacity = '0';
+            }
+            setTimeout(() => {
+                modal.classList.remove('open');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
         // Close with Escape key
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeResumeModal();
+            if (e.key === 'Escape') {
+                closeResumeModal();
+                closeCaseStudy('modal-askvit');
+                closeCaseStudy('modal-bharatfin');
+            }
         });
 
         // FAB entrance animation
